@@ -1,0 +1,30 @@
+# Backend (Java/Maven)
+backend/target/
+backend/*.jar
+backend/*.war
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env.local
+
+# Frontend (Node/React)
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+
+# Logs
+*.log
+IMPLEMENTATION_GUIDE.md
