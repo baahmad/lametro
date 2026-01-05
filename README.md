@@ -1,3 +1,3 @@
-# LA Metro Real Time Display
-See the real time position of LA Metro trains displayed on a map of Los Angeles.
+# NY MTA Real Time Display
+See the real time position of MTA trains displayed on a map of New York.
 

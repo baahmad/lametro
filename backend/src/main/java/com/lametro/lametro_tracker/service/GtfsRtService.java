@@ -16,7 +16,7 @@ public class GtfsRtService {
     public List<VehiclePosition> getVehiclePositions(){
         List<VehiclePosition> positions = new ArrayList<>();
         try {
-            URI uri = new URI("https://example.com/gtfs-rt");
+            URI uri = new URI("https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs");
             try (InputStream inputStream = uri.toURL().openStream()){
                 FeedMessage feed = FeedMessage.parseFrom(inputStream);
                 for (FeedEntity entity: feed.getEntityList()) {
