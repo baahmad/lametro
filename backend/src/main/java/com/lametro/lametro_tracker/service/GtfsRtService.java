@@ -1,5 +1,6 @@
 package com.lametro.lametro_tracker.service;
 
+import java.net.HttpURLConnection;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +16,16 @@ import com.lametro.lametro_tracker.model.VehiclePosition;
 @Service
 public class GtfsRtService {
 
-    @Value("${bart.api.key}")
+    @Value("${lametro.api.key}")
     private String apiKey;
     
     public List<VehiclePosition> getVehiclePositions(){
         List<VehiclePosition> positions = new ArrayList<>();
         try {
-            URI uri = new URI("https://api.511.org/transit/vehiclepositions?api_key=" + apiKey + "&agency=SF");
-            try (InputStream inputStream = uri.toURL().openStream()){
+            URI uri = new URI("https://api.goswift.ly/real-time/lametro-rail/gtfs-rt-vehicle-positions");
+            HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection();
+            conn.setRequestProperty("Authorization", apiKey);
+            try (InputStream inputStream = conn.getInputStream()){
                 FeedMessage feed = FeedMessage.parseFrom(inputStream);
                 for (FeedEntity entity: feed.getEntityList()) {
                     if (entity.hasVehicle()) {
