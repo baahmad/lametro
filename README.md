@@ -1,10 +1,14 @@
-# SF Muni Real Time Display
-See the real time position of SF Muni vehicles displayed on a map of The Bay. You'll see references to the LA metro throughout this file because I orginally wanted to do this for LA but they make it difficult to get developer access so I pivoted to the Bay.
+# LA Metro Real-time Display
+See the real-time position of LA Metro displayed on a map of Los  Angeles.
 
 ## Prerequisites.
-You need an API key from 511 SF Bay. You can request a key [here](https://511.org/open-data/token). Once you have a token, add it to your local environment. For example, on my MacBook I added this to  `~/.zshrc`:
+You need an API key from Swiftly. You can submit a request for a key at the bottom of the form [here](https://docs.goswift.ly/docs/realtime-standalone/d08fc97489edb-swiftly-api-reference). Once you have a token, add it to your local environment. For example, on my MacBook I added this to  `~/.zshrc`:
 ```
-export BART_API_KEY=YOUR_KEY
+export LAMETRO_API_KEY=YOUR_KEY
+```
+Then run:
+```
+source ~/.zshrc
 ```
 
 ## How to Run.
@@ -19,5 +23,4 @@ npm run dev
 ```
 
 ## Snapshot
-Navigating to http://localhost:5173/:
-![Screenshot](screenshot.png)
+TODO

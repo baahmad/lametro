@@ -1,12 +1,12 @@
 import { MapContainer, TileLayer, CircleMarker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const BAY_AREA_CENTER = [37.7749, -122.4194];
+const LA_CENTER = [34.0522, -118.2437];
 
 function MetroMap({ vehicles }) {
   return (
     <MapContainer 
-      center={BAY_AREA_CENTER} 
+      center={LA_CENTER} 
       zoom={11} 
       style={{ height: '100vh', width: '100%' }}
     >
