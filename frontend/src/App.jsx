@@ -1,4 +1,5 @@
 import MetroMap from './components/MetroMap';
+import TripPanel from './components/TripPanel';
 import useVehiclePositions from './hooks/useVehiclePositions';
 import './App.css';
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       {error && <div className="error">Error: {error}</div>}
+      <TripPanel />
       <MetroMap vehicles={vehicles} />
     </div>
   );

@@ -78,12 +78,64 @@ for stop in stops:
             'lon': float(stop['stop_lon'])
         })
 
+# Parse trips to map trip_id to the route_id and direction_id.
+trips = parse_csv('../gtfs-data/trips.txt')
+trip_info = {}
+for trip in trips:
+    trip_info[trip['trip_id']] = {
+        'route_id': trip['route_id'],
+        'direction_id': int(trip['direction_id'])
+    }
+
+# Parse stop_times and group by trip_id.
+stop_times = parse_csv('../gtfs-data/stop_times.txt')
+trip_stops = defaultdict(list)
+
+for st in stop_times:
+    trip_stops[st['trip_id']].append({
+        'stop_id': st['stop_id'],
+        'sequence': int(st['stop_sequence'])
+    })
+
+# For each route/direction, find the trip with the most stops.
+route_direction_trips = {}  # key: (route_id, direction_id), value: trip_id
+for trip_id, stops_list in trip_stops.items():
+    if trip_id not in trip_info:
+        continue
+
+    route_id = trip_info[trip_id]['route_id']
+    direction_id = trip_info[trip_id]['direction_id']
+    key = (route_id, direction_id)
+    if key not in route_direction_trips or len(stops_list) > len(trip_stops[route_direction_trips[key]]):
+        route_direction_trips[key] = trip_id
+
+# Build stop sequences for each route/trip.
+stop_name_lookup = {s['stop_id']: s['name'] for s in stations}
+
+stop_sequences = {}
+for (route_id, direction_id), trip_id in route_direction_trips.items():
+    stops_list = sorted(trip_stops[trip_id], key=lambda s: s['sequence'])
+    
+    # Map stop_id to parent station (add 'S' suffix)
+    stop_sequence = []
+    for stop in stops_list:
+        parent_id = stop['stop_id'] + 'S'
+        if parent_id in stop_name_lookup:
+            stop_sequence.append({
+                'stop_id': parent_id,
+                'name': stop_name_lookup[parent_id]
+            })
+    
+    key = f"{route_id}_{direction_id}"
+    stop_sequences[key] = stop_sequence
+
 output = {
     "features": geojson["features"],
-    "stations": stations
+    "stations": stations,
+    "stopSequences": stop_sequences
 }
 
 with open('../frontend/src/data/railLines.json', 'w') as f:
     json.dump(output, f, indent=2)
 
-print(f"Generated GeoJSON with {len(geojson['features'])} rail lines and {len(stations)} stations")
+print(f"Generated GeoJSON with {len(geojson['features'])} rail lines, {len(stations)} stations, and {len(stop_sequences)} stop sequences")

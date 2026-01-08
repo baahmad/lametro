@@ -25180,5 +25180,979 @@
       "lat": 34.04884524,
       "lon": -118.2387567
     }
-  ]
+  ],
+  "stopSequences": {
+    "801_0": [
+      {
+        "stop_id": "80101S",
+        "name": "Downtown Long Beach Station"
+      },
+      {
+        "stop_id": "80102S",
+        "name": "Pacific Ave Station"
+      },
+      {
+        "stop_id": "80105S",
+        "name": "Anaheim Street Station"
+      },
+      {
+        "stop_id": "80106S",
+        "name": "Pacific Coast Hwy Station"
+      },
+      {
+        "stop_id": "80107S",
+        "name": "Willow Street Station"
+      },
+      {
+        "stop_id": "80108S",
+        "name": "Wardlow Station"
+      },
+      {
+        "stop_id": "80109S",
+        "name": "Del Amo Station"
+      },
+      {
+        "stop_id": "80110S",
+        "name": "Artesia Station"
+      },
+      {
+        "stop_id": "80111S",
+        "name": "Compton Station"
+      },
+      {
+        "stop_id": "80112S",
+        "name": "Willowbrook - Rosa Parks Station"
+      },
+      {
+        "stop_id": "80113S",
+        "name": "103rd Street / Watts Towers Station"
+      },
+      {
+        "stop_id": "80114S",
+        "name": "Firestone Station"
+      },
+      {
+        "stop_id": "80115S",
+        "name": "Florence Station"
+      },
+      {
+        "stop_id": "80116S",
+        "name": "Slauson Station"
+      },
+      {
+        "stop_id": "80117S",
+        "name": "Vernon Station"
+      },
+      {
+        "stop_id": "80118S",
+        "name": "Washington Station"
+      },
+      {
+        "stop_id": "80119S",
+        "name": "San Pedro Street Station"
+      },
+      {
+        "stop_id": "80120S",
+        "name": "Grand / LATTC Station"
+      },
+      {
+        "stop_id": "80121S",
+        "name": "Pico Station"
+      },
+      {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
+        "stop_id": "81401S",
+        "name": "Grand Ave Arts / Bunker Hill Station"
+      },
+      {
+        "stop_id": "81402S",
+        "name": "Historic Broadway Station"
+      },
+      {
+        "stop_id": "81403S",
+        "name": "Little Tokyo / Arts District Station"
+      },
+      {
+        "stop_id": "80410S",
+        "name": "Chinatown Station"
+      },
+      {
+        "stop_id": "80411S",
+        "name": "Lincoln Heights / Cypress Park Station"
+      },
+      {
+        "stop_id": "80412S",
+        "name": "Heritage Square / Arroyo Station"
+      },
+      {
+        "stop_id": "80413S",
+        "name": "Southwest Museum Station"
+      },
+      {
+        "stop_id": "80414S",
+        "name": "Highland Park Station"
+      },
+      {
+        "stop_id": "80415S",
+        "name": "South Pasadena Station"
+      },
+      {
+        "stop_id": "80416S",
+        "name": "Fillmore Station"
+      },
+      {
+        "stop_id": "80417S",
+        "name": "Del Mar Station"
+      },
+      {
+        "stop_id": "80418S",
+        "name": "Memorial Park Station"
+      },
+      {
+        "stop_id": "80419S",
+        "name": "Lake Station"
+      },
+      {
+        "stop_id": "80420S",
+        "name": "Allen Station"
+      },
+      {
+        "stop_id": "80421S",
+        "name": "Sierra Madre Villa Station"
+      },
+      {
+        "stop_id": "80422S",
+        "name": "Arcadia Station"
+      },
+      {
+        "stop_id": "80423S",
+        "name": "Monrovia Station"
+      },
+      {
+        "stop_id": "80424S",
+        "name": "Duarte / City of Hope Station"
+      },
+      {
+        "stop_id": "80425S",
+        "name": "Irwindale Station"
+      },
+      {
+        "stop_id": "80426S",
+        "name": "Azusa Downtown Station"
+      },
+      {
+        "stop_id": "80427S",
+        "name": "APU / Citrus College Station"
+      },
+      {
+        "stop_id": "801100S",
+        "name": "Glendora Station"
+      },
+      {
+        "stop_id": "801101S",
+        "name": "San Dimas Station"
+      },
+      {
+        "stop_id": "801102S",
+        "name": "La Verne / Fairplex Station"
+      },
+      {
+        "stop_id": "801103S",
+        "name": "Pomona North Station"
+      }
+    ],
+    "801_1": [
+      {
+        "stop_id": "801103S",
+        "name": "Pomona North Station"
+      },
+      {
+        "stop_id": "801102S",
+        "name": "La Verne / Fairplex Station"
+      },
+      {
+        "stop_id": "801101S",
+        "name": "San Dimas Station"
+      },
+      {
+        "stop_id": "801100S",
+        "name": "Glendora Station"
+      },
+      {
+        "stop_id": "80427S",
+        "name": "APU / Citrus College Station"
+      },
+      {
+        "stop_id": "80426S",
+        "name": "Azusa Downtown Station"
+      },
+      {
+        "stop_id": "80425S",
+        "name": "Irwindale Station"
+      },
+      {
+        "stop_id": "80424S",
+        "name": "Duarte / City of Hope Station"
+      },
+      {
+        "stop_id": "80423S",
+        "name": "Monrovia Station"
+      },
+      {
+        "stop_id": "80422S",
+        "name": "Arcadia Station"
+      },
+      {
+        "stop_id": "80421S",
+        "name": "Sierra Madre Villa Station"
+      },
+      {
+        "stop_id": "80420S",
+        "name": "Allen Station"
+      },
+      {
+        "stop_id": "80419S",
+        "name": "Lake Station"
+      },
+      {
+        "stop_id": "80418S",
+        "name": "Memorial Park Station"
+      },
+      {
+        "stop_id": "80417S",
+        "name": "Del Mar Station"
+      },
+      {
+        "stop_id": "80416S",
+        "name": "Fillmore Station"
+      },
+      {
+        "stop_id": "80415S",
+        "name": "South Pasadena Station"
+      },
+      {
+        "stop_id": "80414S",
+        "name": "Highland Park Station"
+      },
+      {
+        "stop_id": "80413S",
+        "name": "Southwest Museum Station"
+      },
+      {
+        "stop_id": "80412S",
+        "name": "Heritage Square / Arroyo Station"
+      },
+      {
+        "stop_id": "80411S",
+        "name": "Lincoln Heights / Cypress Park Station"
+      },
+      {
+        "stop_id": "80410S",
+        "name": "Chinatown Station"
+      },
+      {
+        "stop_id": "81403S",
+        "name": "Little Tokyo / Arts District Station"
+      },
+      {
+        "stop_id": "81402S",
+        "name": "Historic Broadway Station"
+      },
+      {
+        "stop_id": "81401S",
+        "name": "Grand Ave Arts / Bunker Hill Station"
+      },
+      {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
+        "stop_id": "80121S",
+        "name": "Pico Station"
+      },
+      {
+        "stop_id": "80120S",
+        "name": "Grand / LATTC Station"
+      },
+      {
+        "stop_id": "80119S",
+        "name": "San Pedro Street Station"
+      },
+      {
+        "stop_id": "80118S",
+        "name": "Washington Station"
+      },
+      {
+        "stop_id": "80117S",
+        "name": "Vernon Station"
+      },
+      {
+        "stop_id": "80116S",
+        "name": "Slauson Station"
+      },
+      {
+        "stop_id": "80115S",
+        "name": "Florence Station"
+      },
+      {
+        "stop_id": "80114S",
+        "name": "Firestone Station"
+      },
+      {
+        "stop_id": "80113S",
+        "name": "103rd Street / Watts Towers Station"
+      },
+      {
+        "stop_id": "80112S",
+        "name": "Willowbrook - Rosa Parks Station"
+      },
+      {
+        "stop_id": "80111S",
+        "name": "Compton Station"
+      },
+      {
+        "stop_id": "80110S",
+        "name": "Artesia Station"
+      },
+      {
+        "stop_id": "80109S",
+        "name": "Del Amo Station"
+      },
+      {
+        "stop_id": "80108S",
+        "name": "Wardlow Station"
+      },
+      {
+        "stop_id": "80107S",
+        "name": "Willow Street Station"
+      },
+      {
+        "stop_id": "80106S",
+        "name": "Pacific Coast Hwy Station"
+      },
+      {
+        "stop_id": "80105S",
+        "name": "Anaheim Street Station"
+      },
+      {
+        "stop_id": "80154S",
+        "name": "5th Street Station"
+      },
+      {
+        "stop_id": "80153S",
+        "name": "1st Street Station"
+      },
+      {
+        "stop_id": "80101S",
+        "name": "Downtown Long Beach Station"
+      }
+    ],
+    "802_0": [
+      {
+        "stop_id": "80201S",
+        "name": "North Hollywood Station"
+      },
+      {
+        "stop_id": "80202S",
+        "name": "Universal / Studio City Station"
+      },
+      {
+        "stop_id": "80203S",
+        "name": "Hollywood / Highland Station"
+      },
+      {
+        "stop_id": "80204S",
+        "name": "Hollywood / Vine Station"
+      },
+      {
+        "stop_id": "80205S",
+        "name": "Hollywood / Western Station"
+      },
+      {
+        "stop_id": "80206S",
+        "name": "Vermont / Sunset Station"
+      },
+      {
+        "stop_id": "80207S",
+        "name": "Vermont / Santa Monica Station"
+      },
+      {
+        "stop_id": "80208S",
+        "name": "Vermont / Beverly Station"
+      },
+      {
+        "stop_id": "80209S",
+        "name": "Wilshire / Vermont Station"
+      },
+      {
+        "stop_id": "80210S",
+        "name": "Westlake / MacArthur Park Station"
+      },
+      {
+        "stop_id": "80212S",
+        "name": "Pershing Square Station"
+      },
+      {
+        "stop_id": "80213S",
+        "name": "Civic Center / Grand Park Station"
+      },
+      {
+        "stop_id": "80214S",
+        "name": "Union Station"
+      }
+    ],
+    "802_1": [
+      {
+        "stop_id": "80214S",
+        "name": "Union Station"
+      },
+      {
+        "stop_id": "80213S",
+        "name": "Civic Center / Grand Park Station"
+      },
+      {
+        "stop_id": "80212S",
+        "name": "Pershing Square Station"
+      },
+      {
+        "stop_id": "80210S",
+        "name": "Westlake / MacArthur Park Station"
+      },
+      {
+        "stop_id": "80209S",
+        "name": "Wilshire / Vermont Station"
+      },
+      {
+        "stop_id": "80208S",
+        "name": "Vermont / Beverly Station"
+      },
+      {
+        "stop_id": "80207S",
+        "name": "Vermont / Santa Monica Station"
+      },
+      {
+        "stop_id": "80206S",
+        "name": "Vermont / Sunset Station"
+      },
+      {
+        "stop_id": "80205S",
+        "name": "Hollywood / Western Station"
+      },
+      {
+        "stop_id": "80204S",
+        "name": "Hollywood / Vine Station"
+      },
+      {
+        "stop_id": "80203S",
+        "name": "Hollywood / Highland Station"
+      },
+      {
+        "stop_id": "80202S",
+        "name": "Universal / Studio City Station"
+      },
+      {
+        "stop_id": "80201S",
+        "name": "North Hollywood Station"
+      }
+    ],
+    "805_1": [
+      {
+        "stop_id": "80214S",
+        "name": "Union Station"
+      },
+      {
+        "stop_id": "80213S",
+        "name": "Civic Center / Grand Park Station"
+      },
+      {
+        "stop_id": "80212S",
+        "name": "Pershing Square Station"
+      },
+      {
+        "stop_id": "80210S",
+        "name": "Westlake / MacArthur Park Station"
+      },
+      {
+        "stop_id": "80209S",
+        "name": "Wilshire / Vermont Station"
+      },
+      {
+        "stop_id": "80215S",
+        "name": "Wilshire / Normandie Station"
+      },
+      {
+        "stop_id": "80216S",
+        "name": "Wilshire / Western Station"
+      }
+    ],
+    "805_0": [
+      {
+        "stop_id": "80216S",
+        "name": "Wilshire / Western Station"
+      },
+      {
+        "stop_id": "80215S",
+        "name": "Wilshire / Normandie Station"
+      },
+      {
+        "stop_id": "80209S",
+        "name": "Wilshire / Vermont Station"
+      },
+      {
+        "stop_id": "80210S",
+        "name": "Westlake / MacArthur Park Station"
+      },
+      {
+        "stop_id": "80212S",
+        "name": "Pershing Square Station"
+      },
+      {
+        "stop_id": "80213S",
+        "name": "Civic Center / Grand Park Station"
+      },
+      {
+        "stop_id": "80214S",
+        "name": "Union Station"
+      }
+    ],
+    "803_0": [
+      {
+        "stop_id": "80314S",
+        "name": "Norwalk Station"
+      },
+      {
+        "stop_id": "80313S",
+        "name": "Lakewood Blvd Station"
+      },
+      {
+        "stop_id": "80312S",
+        "name": "Lynwood Station"
+      },
+      {
+        "stop_id": "80310S",
+        "name": "Avalon Station"
+      },
+      {
+        "stop_id": "80309S",
+        "name": "Harbor Freeway Station"
+      },
+      {
+        "stop_id": "80308S",
+        "name": "Vermont / Athens Station"
+      },
+      {
+        "stop_id": "80307S",
+        "name": "Crenshaw Station"
+      },
+      {
+        "stop_id": "80306S",
+        "name": "Hawthorne / Lennox Station"
+      },
+      {
+        "stop_id": "80305S",
+        "name": "Aviation / Imperial Station"
+      },
+      {
+        "stop_id": "80701S",
+        "name": "Aviation / Century Station"
+      },
+      {
+        "stop_id": "80702S",
+        "name": "LAX / Metro Transit Center"
+      }
+    ],
+    "803_1": [
+      {
+        "stop_id": "80702S",
+        "name": "LAX / Metro Transit Center"
+      },
+      {
+        "stop_id": "80701S",
+        "name": "Aviation / Century Station"
+      },
+      {
+        "stop_id": "80305S",
+        "name": "Aviation / Imperial Station"
+      },
+      {
+        "stop_id": "80306S",
+        "name": "Hawthorne / Lennox Station"
+      },
+      {
+        "stop_id": "80307S",
+        "name": "Crenshaw Station"
+      },
+      {
+        "stop_id": "80308S",
+        "name": "Vermont / Athens Station"
+      },
+      {
+        "stop_id": "80309S",
+        "name": "Harbor Freeway Station"
+      },
+      {
+        "stop_id": "80310S",
+        "name": "Avalon Station"
+      },
+      {
+        "stop_id": "80312S",
+        "name": "Lynwood Station"
+      },
+      {
+        "stop_id": "80313S",
+        "name": "Lakewood Blvd Station"
+      },
+      {
+        "stop_id": "80314S",
+        "name": "Norwalk Station"
+      }
+    ],
+    "807_0": [
+      {
+        "stop_id": "80301S",
+        "name": "Redondo Beach Station"
+      },
+      {
+        "stop_id": "80302S",
+        "name": "Douglas Station"
+      },
+      {
+        "stop_id": "80303S",
+        "name": "El Segundo Station"
+      },
+      {
+        "stop_id": "80304S",
+        "name": "Mariposa Station"
+      },
+      {
+        "stop_id": "80701S",
+        "name": "Aviation / Century Station"
+      },
+      {
+        "stop_id": "80702S",
+        "name": "LAX / Metro Transit Center"
+      },
+      {
+        "stop_id": "80703S",
+        "name": "Westchester / Veterans Station"
+      },
+      {
+        "stop_id": "80704S",
+        "name": "Downtown Inglewood Station"
+      },
+      {
+        "stop_id": "80705S",
+        "name": "Fairview Heights Station"
+      },
+      {
+        "stop_id": "80706S",
+        "name": "Hyde Park Station"
+      },
+      {
+        "stop_id": "80707S",
+        "name": "Leimert Park Station"
+      },
+      {
+        "stop_id": "80708S",
+        "name": "Martin Luther King Jr Station"
+      },
+      {
+        "stop_id": "80709S",
+        "name": "Expo / Crenshaw K-Line Station"
+      }
+    ],
+    "807_1": [
+      {
+        "stop_id": "80709S",
+        "name": "Expo / Crenshaw K-Line Station"
+      },
+      {
+        "stop_id": "80708S",
+        "name": "Martin Luther King Jr Station"
+      },
+      {
+        "stop_id": "80707S",
+        "name": "Leimert Park Station"
+      },
+      {
+        "stop_id": "80706S",
+        "name": "Hyde Park Station"
+      },
+      {
+        "stop_id": "80705S",
+        "name": "Fairview Heights Station"
+      },
+      {
+        "stop_id": "80704S",
+        "name": "Downtown Inglewood Station"
+      },
+      {
+        "stop_id": "80703S",
+        "name": "Westchester / Veterans Station"
+      },
+      {
+        "stop_id": "80702S",
+        "name": "LAX / Metro Transit Center"
+      },
+      {
+        "stop_id": "80701S",
+        "name": "Aviation / Century Station"
+      },
+      {
+        "stop_id": "80304S",
+        "name": "Mariposa Station"
+      },
+      {
+        "stop_id": "80303S",
+        "name": "El Segundo Station"
+      },
+      {
+        "stop_id": "80302S",
+        "name": "Douglas Station"
+      },
+      {
+        "stop_id": "80301S",
+        "name": "Redondo Beach Station"
+      }
+    ],
+    "804_0": [
+      {
+        "stop_id": "80139S",
+        "name": "Downtown Santa Monica Station"
+      },
+      {
+        "stop_id": "80138S",
+        "name": "17th Street / SMC Station"
+      },
+      {
+        "stop_id": "80137S",
+        "name": "26th Street / Bergamot Station"
+      },
+      {
+        "stop_id": "80136S",
+        "name": "Expo / Bundy Station"
+      },
+      {
+        "stop_id": "80135S",
+        "name": "Expo / Sepulveda Station"
+      },
+      {
+        "stop_id": "80134S",
+        "name": "Westwood / Rancho Park Station"
+      },
+      {
+        "stop_id": "80133S",
+        "name": "Palms Station"
+      },
+      {
+        "stop_id": "80132S",
+        "name": "Culver City Station"
+      },
+      {
+        "stop_id": "80131S",
+        "name": "La Cienega / Jefferson Station"
+      },
+      {
+        "stop_id": "80130S",
+        "name": "Expo / La Brea / Ethel Bradley Station"
+      },
+      {
+        "stop_id": "80129S",
+        "name": "Farmdale Station"
+      },
+      {
+        "stop_id": "80128S",
+        "name": "Expo / Crenshaw E-Line Station"
+      },
+      {
+        "stop_id": "80127S",
+        "name": "Expo / Western Station"
+      },
+      {
+        "stop_id": "80126S",
+        "name": "Expo / Vermont Station"
+      },
+      {
+        "stop_id": "80125S",
+        "name": "Expo Park / USC Station"
+      },
+      {
+        "stop_id": "80124S",
+        "name": "Jefferson / USC Station"
+      },
+      {
+        "stop_id": "80123S",
+        "name": "LATTC / Ortho Institute Station"
+      },
+      {
+        "stop_id": "80121S",
+        "name": "Pico Station"
+      },
+      {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
+        "stop_id": "81401S",
+        "name": "Grand Ave Arts / Bunker Hill Station"
+      },
+      {
+        "stop_id": "81402S",
+        "name": "Historic Broadway Station"
+      },
+      {
+        "stop_id": "81403S",
+        "name": "Little Tokyo / Arts District Station"
+      },
+      {
+        "stop_id": "80407S",
+        "name": "Pico / Aliso Station"
+      },
+      {
+        "stop_id": "80406S",
+        "name": "Mariachi Plaza / Boyle Heights Station"
+      },
+      {
+        "stop_id": "80405S",
+        "name": "Soto Station"
+      },
+      {
+        "stop_id": "80404S",
+        "name": "Indiana Station"
+      },
+      {
+        "stop_id": "80403S",
+        "name": "Maravilla Station"
+      },
+      {
+        "stop_id": "80402S",
+        "name": "East LA Civic Center Station"
+      },
+      {
+        "stop_id": "80401S",
+        "name": "Atlantic Station"
+      }
+    ],
+    "804_1": [
+      {
+        "stop_id": "80401S",
+        "name": "Atlantic Station"
+      },
+      {
+        "stop_id": "80402S",
+        "name": "East LA Civic Center Station"
+      },
+      {
+        "stop_id": "80403S",
+        "name": "Maravilla Station"
+      },
+      {
+        "stop_id": "80404S",
+        "name": "Indiana Station"
+      },
+      {
+        "stop_id": "80405S",
+        "name": "Soto Station"
+      },
+      {
+        "stop_id": "80406S",
+        "name": "Mariachi Plaza / Boyle Heights Station"
+      },
+      {
+        "stop_id": "80407S",
+        "name": "Pico / Aliso Station"
+      },
+      {
+        "stop_id": "81403S",
+        "name": "Little Tokyo / Arts District Station"
+      },
+      {
+        "stop_id": "81402S",
+        "name": "Historic Broadway Station"
+      },
+      {
+        "stop_id": "81401S",
+        "name": "Grand Ave Arts / Bunker Hill Station"
+      },
+      {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
+        "stop_id": "80121S",
+        "name": "Pico Station"
+      },
+      {
+        "stop_id": "80123S",
+        "name": "LATTC / Ortho Institute Station"
+      },
+      {
+        "stop_id": "80124S",
+        "name": "Jefferson / USC Station"
+      },
+      {
+        "stop_id": "80125S",
+        "name": "Expo Park / USC Station"
+      },
+      {
+        "stop_id": "80126S",
+        "name": "Expo / Vermont Station"
+      },
+      {
+        "stop_id": "80127S",
+        "name": "Expo / Western Station"
+      },
+      {
+        "stop_id": "80128S",
+        "name": "Expo / Crenshaw E-Line Station"
+      },
+      {
+        "stop_id": "80129S",
+        "name": "Farmdale Station"
+      },
+      {
+        "stop_id": "80130S",
+        "name": "Expo / La Brea / Ethel Bradley Station"
+      },
+      {
+        "stop_id": "80131S",
+        "name": "La Cienega / Jefferson Station"
+      },
+      {
+        "stop_id": "80132S",
+        "name": "Culver City Station"
+      },
+      {
+        "stop_id": "80133S",
+        "name": "Palms Station"
+      },
+      {
+        "stop_id": "80134S",
+        "name": "Westwood / Rancho Park Station"
+      },
+      {
+        "stop_id": "80135S",
+        "name": "Expo / Sepulveda Station"
+      },
+      {
+        "stop_id": "80136S",
+        "name": "Expo / Bundy Station"
+      },
+      {
+        "stop_id": "80137S",
+        "name": "26th Street / Bergamot Station"
+      },
+      {
+        "stop_id": "80138S",
+        "name": "17th Street / SMC Station"
+      },
+      {
+        "stop_id": "80139S",
+        "name": "Downtown Santa Monica Station"
+      }
+    ]
+  }
 }

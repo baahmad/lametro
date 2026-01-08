@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, CircleMarker, Polyline, Pane } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Polyline, Pane, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import railLines from '../data/railLines.json';
 
@@ -9,9 +9,11 @@ function MetroMap({ vehicles }) {
   return (
     <MapContainer 
       center={LA_CENTER} 
-      zoom={11} 
+      zoom={11}
+      zoomControl={false}
       style={{ height: '100vh', width: '100%' }}
     >
+        <ZoomControl position="topright" />
         {/* Map. */}
         <TileLayer
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
