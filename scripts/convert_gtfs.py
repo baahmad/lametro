@@ -41,7 +41,7 @@ for shape_id in shape_points:
     if route_id not in route_shapes or len(shape_points[shape_id]) > len(shape_points[route_shapes[route_id]]):
         route_shapes[route_id] = shape_id
 
-# Create a GeoJSON for the frontend to consume.
+# Create a GeoJSON of the rail shapes for the frontend to consume.
 geojson = {
     "type": "FeatureCollection",
     "features": []
@@ -66,7 +66,24 @@ for route_id, shape_id in route_shapes.items():
 
     geojson["features"].append(feature)
 
-with open('../frontend/src/data/railLines.json', 'w') as f:
-    json.dump(geojson, f, indent=2)
+# Parse rail stations.
+stops = parse_csv('../gtfs-data/stops.txt')
+stations = []
+for stop in stops:
+    if stop['location_type'] == '1':
+        stations.append({
+            'stop_id': stop['stop_id'],
+            'name': stop['stop_name'],
+            'lat': float(stop['stop_lat']),
+            'lon': float(stop['stop_lon'])
+        })
 
-print(f"Generated GeoJSON with {len(geojson['features'])} rail lines")
+output = {
+    "features": geojson["features"],
+    "stations": stations
+}
+
+with open('../frontend/src/data/railLines.json', 'w') as f:
+    json.dump(output, f, indent=2)
+
+print(f"Generated GeoJSON with {len(geojson['features'])} rail lines and {len(stations)} stations")
