@@ -27,6 +27,19 @@ function MetroMap({ vehicles }) {
                 weight={5}
             />
         ))}
+
+        {/* Rail Stations. */}
+        {railLines.stations.map((station) => (
+            <CircleMarker
+                key={station.stop_id}
+                center={[station.lat, station.lon]}
+                radius={3}
+                fillColor="white"
+                fillOpacity={1}
+                color="black"
+                weight={1}
+            />
+        ))}
       
         {/* Vehicle Markers. */}
         {vehicles.map((vehicle) => (
