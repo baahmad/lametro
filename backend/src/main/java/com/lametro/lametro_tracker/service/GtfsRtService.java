@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.transit.realtime.GtfsRealtime.FeedEntity;
 import com.google.transit.realtime.GtfsRealtime.FeedMessage;
+import com.lametro.lametro_tracker.model.StopTimeUpdate;
 import com.lametro.lametro_tracker.model.VehiclePosition;
 
 @Service
@@ -50,5 +51,36 @@ public class GtfsRtService {
         }
 
         return positions;
+    }
+
+    public List<StopTimeUpdate> getTripUpdates() {
+        List<StopTimeUpdate> updates = new ArrayList<>();
+        try {
+            URI uri = new URI("https://api.goswift.ly/real-time/lametro-rail/gtfs-rt-trip-updates");
+            HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection();
+            conn.setRequestProperty("Authorization", apiKey);
+            try (InputStream inputStream = conn.getInputStream()) {
+                FeedMessage feed = FeedMessage.parseFrom(inputStream);
+                for (FeedEntity entity : feed.getEntityList()) {
+                    if (entity.hasTripUpdate()) {
+                        var tripUpdate = entity.getTripUpdate();
+                        String tripId = tripUpdate.getTrip().getTripId();
+                        String routeId = tripUpdate.getTrip().getRouteId();
+                        int directionId = tripUpdate.getTrip().getDirectionId();
+
+                        for (var stopTimeUpdate : tripUpdate.getStopTimeUpdateList()) {
+                            String stopId = stopTimeUpdate.getStopId();
+                            if (stopTimeUpdate.hasArrival()) {
+                                long arrivalTime = stopTimeUpdate.getArrival().getTime();
+                                updates.add(new StopTimeUpdate(tripId, routeId, directionId, stopId, arrivalTime));
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error fetching GTFS-RT trip updates: " + e.getMessage());
+        }
+        return updates;
     }
 }

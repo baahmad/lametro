@@ -1,0 +1,58 @@
+.trip-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.trip-panel.open {
+    width: 300px;
+}
+
+.trip-panel.closed {
+    width: 40px;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 60px;
+    background: white;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.panel-content {
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.panel-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.panel-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.panel-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
