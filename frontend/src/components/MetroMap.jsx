@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, CircleMarker, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Polyline, Pane } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import railLines from '../data/railLines.json';
 
@@ -12,32 +12,40 @@ function MetroMap({ vehicles }) {
       zoom={11} 
       style={{ height: '100vh', width: '100%' }}
     >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; OpenStreetMap contributors'
-      />
-
-      {/* Rail Lines */}
-      {railLines.features.map((feature) => (
-        <Polyline
-            key={feature.properties.route_id}
-            positions={feature.geometry.coordinates.map(([lon, lat]) => [lat, lon])}
-            color={feature.properties.color}
-            weight={3}
+        {/* Map. */}
+        <TileLayer
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
+            attribution='&copy; OpenStreetMap contributors &copy; CARTO'
         />
-      ))}
+        
+        {/* Rail Lines. */}
+        {railLines.features.map((feature) => (
+            <Polyline
+                key={feature.properties.route_id}
+                positions={feature.geometry.coordinates.map(([lon, lat]) => [lat, lon])}
+                color={feature.properties.color}
+                weight={5}
+            />
+        ))}
       
-      {/* Vehicle Markers. */}
-      {vehicles.map((vehicle) => (
-        <CircleMarker
-          key={vehicle.vehicleId}
-          center={[vehicle.latitude, vehicle.longitude]}
-          radius={6}
-          fillColor="blue"
-          fillOpacity={0.8}
-          stroke={false}
-        />
-      ))}
+        {/* Vehicle Markers. */}
+        {vehicles.map((vehicle) => (
+            <CircleMarker
+                key={vehicle.vehicleId}
+                center={[vehicle.latitude, vehicle.longitude]}
+                radius={4}
+                fillColor="black"
+                fillOpacity={0.8}
+                stroke={false}
+            />
+        ))}
+
+        {/* Map labels. */}
+        <Pane name="labels" style={{ zIndex: 650 }}>
+            <TileLayer
+                url="https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png"
+            />
+        </Pane>
     </MapContainer>
   );
 }
