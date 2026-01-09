@@ -1,10 +1,17 @@
-import { MapContainer, TileLayer, CircleMarker, Polyline, Pane, ZoomControl, Tooltip, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Polyline, Pane, ZoomControl, Tooltip, useMap, Marker } from 'react-leaflet';
 import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import railLines from '../data/railLines.json';
 
 
 const LA_CENTER = [34.0522, -118.2437];
+const SPRUCE_GOOSE = [33.9211, -118.3964];
+const gooseIcon = L.divIcon({
+    html: '🪿',
+    className: 'goose-marker',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+});
 
 function ZoomTracker({ setZoom }) {
     const map = useMap();
@@ -92,6 +99,11 @@ function MetroMap({ vehicles, onStationClick }) {
                     stroke={false}
                 />
             ))}
+
+            {/* Spruce Goose Campus */}
+            <Marker position={SPRUCE_GOOSE} icon={gooseIcon}>
+                <Tooltip>da Spruce Goose ❤️</Tooltip>
+            </Marker>
 
             {/* Map labels. */}
             {zoom < 13 && (
