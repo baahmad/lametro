@@ -67,9 +67,13 @@ function TripPanel({ selectedStation }) {
                                 <option value="_">Select a line</option>
                                 {availableLines.map((line, idx) => {
                                     const route = railLines.features.find(f => f.properties.route_id === line.route_id);
+                                    const directionType = route?.properties.directionType || 'north-south';
+                                    const directionLabel = directionType === 'north-south'
+                                        ? (line.direction_id === 0 ? 'Southbound' : 'Northbound')
+                                        : (line.direction_id === 0 ? 'Westbound' : 'Eastbound');
                                     return (
                                         <option key={idx} value={`${line.route_id}_${line.direction_id}`}>
-                                            {route?.properties.name || line.route_id} - Direction {line.direction_id}
+                                            {route?.properties.name || line.route_id} - {directionLabel}
                                         </option>
                                     );
                                 })}

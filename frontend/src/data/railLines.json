@@ -5,7 +5,8 @@
       "properties": {
         "route_id": "801",
         "name": "Metro A Line",
-        "color": "#0072BC"
+        "color": "#0072BC",
+        "directionType": "north-south"
       },
       "geometry": {
         "type": "LineString",
@@ -14254,7 +14255,8 @@
       "properties": {
         "route_id": "802",
         "name": "Metro B Line",
-        "color": "#EB131B"
+        "color": "#EB131B",
+        "directionType": "east-west"
       },
       "geometry": {
         "type": "LineString",
@@ -16119,7 +16121,8 @@
       "properties": {
         "route_id": "803",
         "name": "Metro C Line",
-        "color": "#58A738"
+        "color": "#58A738",
+        "directionType": "east-west"
       },
       "geometry": {
         "type": "LineString",
@@ -18232,7 +18235,8 @@
       "properties": {
         "route_id": "805",
         "name": "Metro D Line",
-        "color": "#A05DA5"
+        "color": "#A05DA5",
+        "directionType": "north-south"
       },
       "geometry": {
         "type": "LineString",
@@ -19425,7 +19429,8 @@
       "properties": {
         "route_id": "804",
         "name": "Metro E Line",
-        "color": "#FDB913"
+        "color": "#FDB913",
+        "directionType": "east-west"
       },
       "geometry": {
         "type": "LineString",
@@ -22598,7 +22603,8 @@
       "properties": {
         "route_id": "807",
         "name": "Metro K Line",
-        "color": "#E56DB1"
+        "color": "#E56DB1",
+        "directionType": "north-south"
       },
       "geometry": {
         "type": "LineString",
