@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './TripPanel.css';
 
 function TripPanel() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className={`trip-panel ${isOpen ? 'open' : 'closed'}`}>
