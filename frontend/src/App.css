@@ -8,3 +8,9 @@
   height: 100vh;
   width: 100vw;
 }
+
+.station-tooltip {
+    font-size: 8px;
+    padding: 2px 5px;
+    text-align: center;
+}
