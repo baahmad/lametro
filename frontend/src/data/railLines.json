@@ -25276,6 +25276,10 @@
         "name": "Little Tokyo / Arts District Station"
       },
       {
+        "stop_id": "80214S",
+        "name": "Union Station"
+      },
+      {
         "stop_id": "80410S",
         "name": "Chinatown Station"
       },
@@ -25454,6 +25458,10 @@
         "name": "Chinatown Station"
       },
       {
+        "stop_id": "80214S",
+        "name": "Union Station"
+      },
+      {
         "stop_id": "81403S",
         "name": "Little Tokyo / Arts District Station"
       },
@@ -25592,6 +25600,10 @@
         "name": "Westlake / MacArthur Park Station"
       },
       {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
         "stop_id": "80212S",
         "name": "Pershing Square Station"
       },
@@ -25616,6 +25628,10 @@
       {
         "stop_id": "80212S",
         "name": "Pershing Square Station"
+      },
+      {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
       },
       {
         "stop_id": "80210S",
@@ -25672,6 +25688,10 @@
         "name": "Pershing Square Station"
       },
       {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
         "stop_id": "80210S",
         "name": "Westlake / MacArthur Park Station"
       },
@@ -25706,6 +25726,10 @@
         "name": "Westlake / MacArthur Park Station"
       },
       {
+        "stop_id": "80122S",
+        "name": "7th Street / Metro Center Station"
+      },
+      {
         "stop_id": "80212S",
         "name": "Pershing Square Station"
       },
@@ -25730,6 +25754,10 @@
       {
         "stop_id": "80312S",
         "name": "Lynwood Station"
+      },
+      {
+        "stop_id": "80112S",
+        "name": "Willowbrook - Rosa Parks Station"
       },
       {
         "stop_id": "80310S",
@@ -25796,6 +25824,10 @@
       {
         "stop_id": "80310S",
         "name": "Avalon Station"
+      },
+      {
+        "stop_id": "80112S",
+        "name": "Willowbrook - Rosa Parks Station"
       },
       {
         "stop_id": "80312S",
@@ -26152,6 +26184,1204 @@
       {
         "stop_id": "80139S",
         "name": "Downtown Santa Monica Station"
+      }
+    ]
+  },
+  "stationLines": {
+    "80101S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80102S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      }
+    ],
+    "80105S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80106S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80107S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80108S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80109S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80110S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80111S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80112S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80113S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80114S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80115S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80116S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80117S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80118S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80119S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80120S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80121S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80122S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "81401S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "81402S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "81403S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80214S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      },
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80410S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80411S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80412S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80413S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80414S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80415S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80416S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80417S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80418S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80419S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80420S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80421S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80422S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80423S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80424S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80425S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80426S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80427S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "801100S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "801101S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "801102S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "801103S": [
+      {
+        "route_id": "801",
+        "direction_id": 0
+      },
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80154S": [
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80153S": [
+      {
+        "route_id": "801",
+        "direction_id": 1
+      }
+    ],
+    "80201S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80202S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80203S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80204S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80205S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80206S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80207S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80208S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      }
+    ],
+    "80209S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80210S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80212S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80213S": [
+      {
+        "route_id": "802",
+        "direction_id": 0
+      },
+      {
+        "route_id": "802",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80215S": [
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80216S": [
+      {
+        "route_id": "805",
+        "direction_id": 1
+      },
+      {
+        "route_id": "805",
+        "direction_id": 0
+      }
+    ],
+    "80314S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80313S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80312S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80310S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80309S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80308S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80307S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80306S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80305S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      }
+    ],
+    "80701S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      },
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80702S": [
+      {
+        "route_id": "803",
+        "direction_id": 0
+      },
+      {
+        "route_id": "803",
+        "direction_id": 1
+      },
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80301S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80302S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80303S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80304S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80703S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80704S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80705S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80706S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80707S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80708S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80709S": [
+      {
+        "route_id": "807",
+        "direction_id": 0
+      },
+      {
+        "route_id": "807",
+        "direction_id": 1
+      }
+    ],
+    "80139S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80138S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80137S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80136S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80135S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80134S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80133S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80132S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80131S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80130S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80129S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80128S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80127S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80126S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80125S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80124S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80123S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80407S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80406S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80405S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80404S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80403S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80402S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
+      }
+    ],
+    "80401S": [
+      {
+        "route_id": "804",
+        "direction_id": 0
+      },
+      {
+        "route_id": "804",
+        "direction_id": 1
       }
     ]
   }

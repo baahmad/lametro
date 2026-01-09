@@ -23,7 +23,7 @@ function ZoomTracker({ setZoom }) {
     return null;
 }
 
-function MetroMap({ vehicles }) {
+function MetroMap({ vehicles, onStationClick }) {
     const [zoom, setZoom] = useState(11)
     return (
         <MapContainer 
@@ -61,6 +61,9 @@ function MetroMap({ vehicles }) {
                     fillOpacity={1}
                     color="black"
                     weight={2}
+                    eventHandlers={{
+                        click: () => onStationClick(station)
+                    }}
                 >
                     {zoom >= 13 ? (
                         <Tooltip direction="top" offset={[0, -5]} opacity={0.9} permanent className="station-tooltip">
