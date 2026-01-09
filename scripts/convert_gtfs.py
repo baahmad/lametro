@@ -112,14 +112,23 @@ for trip_id, stops_list in trip_stops.items():
 # Build stop sequences for each route/trip.
 stop_name_lookup = {s['stop_id']: s['name'] for s in stations}
 
+# Build a map of child stop_id -> parent station
+stop_to_parent = {}
+for stop in stops:
+    if stop['parent_station']:
+        stop_to_parent[stop['stop_id']] = stop['parent_station']
+    else:
+        stop_to_parent[stop['stop_id']] = stop['stop_id']
+
+# Build stop sequences for each route/trip.
 stop_sequences = {}
 for (route_id, direction_id), trip_id in route_direction_trips.items():
     stops_list = sorted(trip_stops[trip_id], key=lambda s: s['sequence'])
     
-    # Map stop_id to parent station (add 'S' suffix)
+    # Map stop_id to parent station using the lookup
     stop_sequence = []
     for stop in stops_list:
-        parent_id = stop['stop_id'] + 'S'
+        parent_id = stop_to_parent.get(stop['stop_id'], stop['stop_id'] + 'S')
         if parent_id in stop_name_lookup:
             stop_sequence.append({
                 'stop_id': parent_id,
@@ -129,10 +138,22 @@ for (route_id, direction_id), trip_id in route_direction_trips.items():
     key = f"{route_id}_{direction_id}"
     stop_sequences[key] = stop_sequence
 
+# Build a map of of the lines available at each station.
+station_lines = defaultdict(list)
+for key, stops in stop_sequences.items():
+    route_id, direction_id = key.split('_')
+    for stop in stops:
+        stop_id = stop['stop_id']
+        station_lines[stop_id].append({
+            'route_id': route_id,
+            'direction_id': int(direction_id)
+        })
+
 output = {
     "features": geojson["features"],
     "stations": stations,
-    "stopSequences": stop_sequences
+    "stopSequences": stop_sequences,
+    "stationLines": station_lines
 }
 
 with open('../frontend/src/data/railLines.json', 'w') as f:
