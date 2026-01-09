@@ -66,6 +66,8 @@ for route_id, shape_id in route_shapes.items():
 
     geojson["features"].append(feature)
 
+geojson["features"].sort(key=lambda f: f["properties"]["name"])
+
 # Parse rail stations.
 stops = parse_csv('../gtfs-data/stops.txt')
 stations = []

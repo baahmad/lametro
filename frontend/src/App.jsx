@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import MapLegend from './components/MapLegend';
 import MetroMap from './components/MetroMap';
 import TripPanel from './components/TripPanel';
 import useVehiclePositions from './hooks/useVehiclePositions';
@@ -13,6 +14,7 @@ function App() {
       {error && <div className="error">Error: {error}</div>}
       <TripPanel selectedStation={selectedStation}/>
       <MetroMap vehicles={vehicles} onStationClick={setSelectedStation} />
+      <MapLegend/>
     </div>
   );
 }
