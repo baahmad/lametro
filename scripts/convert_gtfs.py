@@ -70,15 +70,30 @@ geojson["features"].sort(key=lambda f: f["properties"]["name"])
 
 # Parse rail stations.
 stops = parse_csv('../gtfs-data/stops.txt')
-stations = []
+
+# First pass: collect all parent stations (location_type = 1)
+parent_stations = {}
 for stop in stops:
     if stop['location_type'] == '1':
-        stations.append({
+        parent_stations[stop['stop_id']] = {
             'stop_id': stop['stop_id'],
             'name': stop['stop_name'],
             'lat': float(stop['stop_lat']),
-            'lon': float(stop['stop_lon'])
-        })
+            'lon': float(stop['stop_lon']),
+            'stopIds': []  # Will collect all child stop IDs
+        }
+
+# Second pass: collect all child stop IDs for each parent station.
+# This includes platforms (location_type = 0) that belong to the parent.
+for stop in stops:
+    parent_id = stop.get('parent_station', '')
+    if parent_id and parent_id in parent_stations:
+        # Only add platform stops (location_type = 0), not entrances
+        if stop['location_type'] == '0':
+            parent_stations[parent_id]['stopIds'].append(stop['stop_id'])
+
+# Convert to list
+stations = list(parent_stations.values())
 
 # Direction type for each route (north-south or east-west).
 direction_types = {

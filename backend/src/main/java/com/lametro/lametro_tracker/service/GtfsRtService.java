@@ -33,13 +33,15 @@ public class GtfsRtService {
                         var vehicle = entity.getVehicle();
                         String vehicleId = vehicle.getVehicle().getId();
                         String routeId = vehicle.getTrip().getRouteId();
+                        String tripId = vehicle.getTrip().getTripId();
+                        int directionId = vehicle.getTrip().getDirectionId();
                         double latitude = vehicle.getPosition().getLatitude();
                         double longitude = vehicle.getPosition().getLongitude();
                         float bearing = vehicle.getPosition().getBearing();
                         long timestamp = vehicle.getTimestamp();
 
                         VehiclePosition pos = new VehiclePosition(
-                            vehicleId, routeId, latitude, longitude, bearing, timestamp
+                            vehicleId, routeId, tripId, directionId, latitude, longitude, bearing, timestamp
                         );
 
                         positions.add(pos);
