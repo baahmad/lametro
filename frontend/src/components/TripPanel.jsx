@@ -22,7 +22,9 @@ function TripPanel({ selectedStation }) {
     useEffect(() => {
         if (selectedLine && selectedDirection && selectedStation) {
             setLoading(true);
-            fetch(`http://localhost:8080/api/trip-updates?routeId=${selectedLine}&directionId=${selectedDirection}&stopId=${selectedStation.stop_id}`)
+            // Build stopIds parameter from station's stopIds array
+            const stopIdsParam = selectedStation.stopIds?.join(',') || selectedStation.stop_id;
+            fetch(`http://localhost:8080/api/trip-updates?routeId=${selectedLine}&directionId=${selectedDirection}&stopIds=${stopIdsParam}`)
                 .then(res => res.json())
                 .then(data => {
                     setArrivals(data);

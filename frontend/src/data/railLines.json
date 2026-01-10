@@ -24542,649 +24542,976 @@
       "stop_id": "80101S",
       "name": "Downtown Long Beach Station",
       "lat": 33.768071,
-      "lon": -118.192921
+      "lon": -118.192921,
+      "stopIds": [
+        "80101"
+      ]
     },
     {
       "stop_id": "80102S",
       "name": "Pacific Ave Station",
       "lat": 33.772258,
-      "lon": -118.1937
+      "lon": -118.1937,
+      "stopIds": [
+        "80102"
+      ]
     },
     {
       "stop_id": "80105S",
       "name": "Anaheim Street Station",
       "lat": 33.78183,
-      "lon": -118.189384
+      "lon": -118.189384,
+      "stopIds": [
+        "80105"
+      ]
     },
     {
       "stop_id": "80106S",
       "name": "Pacific Coast Hwy Station",
       "lat": 33.78909,
-      "lon": -118.189382
+      "lon": -118.189382,
+      "stopIds": [
+        "80106"
+      ]
     },
     {
       "stop_id": "80107S",
       "name": "Willow Street Station",
       "lat": 33.807079,
-      "lon": -118.189834
+      "lon": -118.189834,
+      "stopIds": [
+        "80107"
+      ]
     },
     {
       "stop_id": "80108S",
       "name": "Wardlow Station",
       "lat": 33.819865,
-      "lon": -118.19609
+      "lon": -118.19609,
+      "stopIds": [
+        "80108"
+      ]
     },
     {
       "stop_id": "80109S",
       "name": "Del Amo Station",
       "lat": 33.848222,
-      "lon": -118.211017
+      "lon": -118.211017,
+      "stopIds": [
+        "80109"
+      ]
     },
     {
       "stop_id": "80110S",
       "name": "Artesia Station",
       "lat": 33.876082,
-      "lon": -118.222503
+      "lon": -118.222503,
+      "stopIds": [
+        "80110"
+      ]
     },
     {
       "stop_id": "80111S",
       "name": "Compton Station",
       "lat": 33.89749,
-      "lon": -118.224249
+      "lon": -118.224249,
+      "stopIds": [
+        "80111"
+      ]
     },
     {
       "stop_id": "80112S",
       "name": "Willowbrook - Rosa Parks Station",
       "lat": 33.928048,
-      "lon": -118.237555
+      "lon": -118.237555,
+      "stopIds": [
+        "80112",
+        "80311"
+      ]
     },
     {
       "stop_id": "80113S",
       "name": "103rd Street / Watts Towers Station",
       "lat": 33.94222,
-      "lon": -118.243159
+      "lon": -118.243159,
+      "stopIds": [
+        "80113"
+      ]
     },
     {
       "stop_id": "80114S",
       "name": "Firestone Station",
       "lat": 33.959611,
-      "lon": -118.243205
+      "lon": -118.243205,
+      "stopIds": [
+        "80114"
+      ]
     },
     {
       "stop_id": "80115S",
       "name": "Florence Station",
       "lat": 33.97374,
-      "lon": -118.243271
+      "lon": -118.243271,
+      "stopIds": [
+        "80115"
+      ]
     },
     {
       "stop_id": "80116S",
       "name": "Slauson Station",
       "lat": 33.98876,
-      "lon": -118.243398
+      "lon": -118.243398,
+      "stopIds": [
+        "80116"
+      ]
     },
     {
       "stop_id": "80117S",
       "name": "Vernon Station",
       "lat": 34.00292,
-      "lon": -118.243303
+      "lon": -118.243303,
+      "stopIds": [
+        "80117"
+      ]
     },
     {
       "stop_id": "80118S",
       "name": "Washington Station",
       "lat": 34.01965,
-      "lon": -118.243084
+      "lon": -118.243084,
+      "stopIds": [
+        "80118"
+      ]
     },
     {
       "stop_id": "80119S",
       "name": "San Pedro Street Station",
       "lat": 34.026807,
-      "lon": -118.255505
+      "lon": -118.255505,
+      "stopIds": [
+        "80119"
+      ]
     },
     {
       "stop_id": "80120S",
       "name": "Grand / LATTC Station",
       "lat": 34.033155,
-      "lon": -118.269333
+      "lon": -118.269333,
+      "stopIds": [
+        "80120"
+      ]
     },
     {
       "stop_id": "80121S",
       "name": "Pico Station",
       "lat": 34.040735,
-      "lon": -118.266118
+      "lon": -118.266118,
+      "stopIds": [
+        "80121"
+      ]
     },
     {
       "stop_id": "80122S",
       "name": "7th Street / Metro Center Station",
       "lat": 34.04861,
-      "lon": -118.258822
+      "lon": -118.258822,
+      "stopIds": [
+        "80122",
+        "80211"
+      ]
     },
     {
       "stop_id": "80123S",
       "name": "LATTC / Ortho Institute Station",
       "lat": 34.029112,
-      "lon": -118.273603
+      "lon": -118.273603,
+      "stopIds": [
+        "80123"
+      ]
     },
     {
       "stop_id": "80124S",
       "name": "Jefferson / USC Station",
       "lat": 34.022123,
-      "lon": -118.278118
+      "lon": -118.278118,
+      "stopIds": [
+        "80124"
+      ]
     },
     {
       "stop_id": "80125S",
       "name": "Expo Park / USC Station",
       "lat": 34.018227,
-      "lon": -118.285734
+      "lon": -118.285734,
+      "stopIds": [
+        "80125"
+      ]
     },
     {
       "stop_id": "80126S",
       "name": "Expo / Vermont Station",
       "lat": 34.018245,
-      "lon": -118.29154
+      "lon": -118.29154,
+      "stopIds": [
+        "80126"
+      ]
     },
     {
       "stop_id": "80127S",
       "name": "Expo / Western Station",
       "lat": 34.018331,
-      "lon": -118.30891
+      "lon": -118.30891,
+      "stopIds": [
+        "80127"
+      ]
     },
     {
       "stop_id": "80128S",
       "name": "Expo / Crenshaw E-Line Station",
       "lat": 34.022526,
-      "lon": -118.335078
+      "lon": -118.335078,
+      "stopIds": [
+        "80128"
+      ]
     },
     {
       "stop_id": "80129S",
       "name": "Farmdale Station",
       "lat": 34.023981,
-      "lon": -118.346095
+      "lon": -118.346095,
+      "stopIds": [
+        "80129"
+      ]
     },
     {
       "stop_id": "80130S",
       "name": "Expo / La Brea / Ethel Bradley Station",
       "lat": 34.024803,
-      "lon": -118.355159
+      "lon": -118.355159,
+      "stopIds": [
+        "80130"
+      ]
     },
     {
       "stop_id": "80131S",
       "name": "La Cienega / Jefferson Station",
       "lat": 34.026355,
-      "lon": -118.37212
+      "lon": -118.37212,
+      "stopIds": [
+        "80131"
+      ]
     },
     {
       "stop_id": "80132S",
       "name": "Culver City Station",
       "lat": 34.027896,
-      "lon": -118.388986
+      "lon": -118.388986,
+      "stopIds": [
+        "80132"
+      ]
     },
     {
       "stop_id": "80133S",
       "name": "Palms Station",
       "lat": 34.029323,
-      "lon": -118.404255
+      "lon": -118.404255,
+      "stopIds": [
+        "80133"
+      ]
     },
     {
       "stop_id": "80134S",
       "name": "Westwood / Rancho Park Station",
       "lat": 34.036816,
-      "lon": -118.424576
+      "lon": -118.424576,
+      "stopIds": [
+        "80134"
+      ]
     },
     {
       "stop_id": "80135S",
       "name": "Expo / Sepulveda Station",
       "lat": 34.035408,
-      "lon": -118.434234
+      "lon": -118.434234,
+      "stopIds": [
+        "80135"
+      ]
     },
     {
       "stop_id": "80136S",
       "name": "Expo / Bundy Station",
       "lat": 34.031705,
-      "lon": -118.452896
+      "lon": -118.452896,
+      "stopIds": [
+        "80136"
+      ]
     },
     {
       "stop_id": "80137S",
       "name": "26th Street / Bergamot Station",
       "lat": 34.027995,
-      "lon": -118.46912
+      "lon": -118.46912,
+      "stopIds": [
+        "80137"
+      ]
     },
     {
       "stop_id": "80138S",
       "name": "17th Street / SMC Station",
       "lat": 34.023155,
-      "lon": -118.480372
+      "lon": -118.480372,
+      "stopIds": [
+        "80138"
+      ]
     },
     {
       "stop_id": "80139S",
       "name": "Downtown Santa Monica Station",
       "lat": 34.01401,
-      "lon": -118.491384
+      "lon": -118.491384,
+      "stopIds": [
+        "80139"
+      ]
     },
     {
       "stop_id": "80153S",
       "name": "1st Street Station",
       "lat": 33.76874,
-      "lon": -118.189362
+      "lon": -118.189362,
+      "stopIds": [
+        "80153"
+      ]
     },
     {
       "stop_id": "80154S",
       "name": "5th Street Station",
       "lat": 33.773598,
-      "lon": -118.189412
+      "lon": -118.189412,
+      "stopIds": [
+        "80154"
+      ]
     },
     {
       "stop_id": "801100S",
       "name": "Glendora Station",
       "lat": 34.1319,
-      "lon": -117.8663
+      "lon": -117.8663,
+      "stopIds": [
+        "801100"
+      ]
     },
     {
       "stop_id": "801101S",
       "name": "San Dimas Station",
       "lat": 34.1052,
-      "lon": -117.8058
+      "lon": -117.8058,
+      "stopIds": [
+        "801101"
+      ]
     },
     {
       "stop_id": "801102S",
       "name": "La Verne / Fairplex Station",
       "lat": 34.0972,
-      "lon": -117.7681
+      "lon": -117.7681,
+      "stopIds": [
+        "801102"
+      ]
     },
     {
       "stop_id": "801103S",
       "name": "Pomona North Station",
       "lat": 34.094,
-      "lon": -117.7522
+      "lon": -117.7522,
+      "stopIds": [
+        "801103"
+      ]
     },
     {
       "stop_id": "80201S",
       "name": "North Hollywood Station",
       "lat": 34.168504,
-      "lon": -118.376808
+      "lon": -118.376808,
+      "stopIds": [
+        "80201"
+      ]
     },
     {
       "stop_id": "80202S",
       "name": "Universal / Studio City Station",
       "lat": 34.140002,
-      "lon": -118.362699
+      "lon": -118.362699,
+      "stopIds": [
+        "80202"
+      ]
     },
     {
       "stop_id": "80203S",
       "name": "Hollywood / Highland Station",
       "lat": 34.101547,
-      "lon": -118.338549
+      "lon": -118.338549,
+      "stopIds": [
+        "80203"
+      ]
     },
     {
       "stop_id": "80204S",
       "name": "Hollywood / Vine Station",
       "lat": 34.10163,
-      "lon": -118.32518
+      "lon": -118.32518,
+      "stopIds": [
+        "80204"
+      ]
     },
     {
       "stop_id": "80205S",
       "name": "Hollywood / Western Station",
       "lat": 34.101737,
-      "lon": -118.308117
+      "lon": -118.308117,
+      "stopIds": [
+        "80205"
+      ]
     },
     {
       "stop_id": "80206S",
       "name": "Vermont / Sunset Station",
       "lat": 34.097708,
-      "lon": -118.291756
+      "lon": -118.291756,
+      "stopIds": [
+        "80206"
+      ]
     },
     {
       "stop_id": "80207S",
       "name": "Vermont / Santa Monica Station",
       "lat": 34.08991,
-      "lon": -118.29173
+      "lon": -118.29173,
+      "stopIds": [
+        "80207"
+      ]
     },
     {
       "stop_id": "80208S",
       "name": "Vermont / Beverly Station",
       "lat": 34.076526,
-      "lon": -118.291686
+      "lon": -118.291686,
+      "stopIds": [
+        "80208"
+      ]
     },
     {
       "stop_id": "80209S",
       "name": "Wilshire / Vermont Station",
       "lat": 34.062701,
-      "lon": -118.290082
+      "lon": -118.290082,
+      "stopIds": [
+        "80209"
+      ]
     },
     {
       "stop_id": "80210S",
       "name": "Westlake / MacArthur Park Station",
       "lat": 34.056368,
-      "lon": -118.274879
+      "lon": -118.274879,
+      "stopIds": [
+        "80210"
+      ]
     },
     {
       "stop_id": "80212S",
       "name": "Pershing Square Station",
       "lat": 34.049316,
-      "lon": -118.251259
+      "lon": -118.251259,
+      "stopIds": [
+        "80212"
+      ]
     },
     {
       "stop_id": "80213S",
       "name": "Civic Center / Grand Park Station",
       "lat": 34.0549,
-      "lon": -118.246057
+      "lon": -118.246057,
+      "stopIds": [
+        "80213"
+      ]
     },
     {
       "stop_id": "80214S",
       "name": "Union Station",
       "lat": 34.056197,
-      "lon": -118.234249
+      "lon": -118.234249,
+      "stopIds": [
+        "80214",
+        "80409"
+      ]
     },
     {
       "stop_id": "80215S",
       "name": "Wilshire / Normandie Station",
       "lat": 34.061753,
-      "lon": -118.301458
+      "lon": -118.301458,
+      "stopIds": [
+        "80215"
+      ]
     },
     {
       "stop_id": "80216S",
       "name": "Wilshire / Western Station",
       "lat": 34.061689,
-      "lon": -118.308756
+      "lon": -118.308756,
+      "stopIds": [
+        "80216"
+      ]
     },
     {
       "stop_id": "80301S",
       "name": "Redondo Beach Station",
       "lat": 33.89464,
-      "lon": -118.369196
+      "lon": -118.369196,
+      "stopIds": [
+        "80301"
+      ]
     },
     {
       "stop_id": "80302S",
       "name": "Douglas Station",
       "lat": 33.905299,
-      "lon": -118.383113
+      "lon": -118.383113,
+      "stopIds": [
+        "80302"
+      ]
     },
     {
       "stop_id": "80303S",
       "name": "El Segundo Station",
       "lat": 33.916063,
-      "lon": -118.386539
+      "lon": -118.386539,
+      "stopIds": [
+        "80303"
+      ]
     },
     {
       "stop_id": "80304S",
       "name": "Mariposa Station",
       "lat": 33.9232,
-      "lon": -118.387572
+      "lon": -118.387572,
+      "stopIds": [
+        "80304"
+      ]
     },
     {
       "stop_id": "80305S",
       "name": "Aviation / Imperial Station",
       "lat": 33.929621,
-      "lon": -118.377134
+      "lon": -118.377134,
+      "stopIds": [
+        "80305"
+      ]
     },
     {
       "stop_id": "80306S",
       "name": "Hawthorne / Lennox Station",
       "lat": 33.933408,
-      "lon": -118.351602
+      "lon": -118.351602,
+      "stopIds": [
+        "80306"
+      ]
     },
     {
       "stop_id": "80307S",
       "name": "Crenshaw Station",
       "lat": 33.925201,
-      "lon": -118.32655
+      "lon": -118.32655,
+      "stopIds": [
+        "80307"
+      ]
     },
     {
       "stop_id": "80308S",
       "name": "Vermont / Athens Station",
       "lat": 33.928683,
-      "lon": -118.291733
+      "lon": -118.291733,
+      "stopIds": [
+        "80308"
+      ]
     },
     {
       "stop_id": "80309S",
       "name": "Harbor Freeway Station",
       "lat": 33.928714,
-      "lon": -118.2811
+      "lon": -118.2811,
+      "stopIds": [
+        "80309"
+      ]
     },
     {
       "stop_id": "80310S",
       "name": "Avalon Station",
       "lat": 33.927465,
-      "lon": -118.265217
+      "lon": -118.265217,
+      "stopIds": [
+        "80310"
+      ]
     },
     {
       "stop_id": "80312S",
       "name": "Lynwood Station",
       "lat": 33.92488,
-      "lon": -118.209945
+      "lon": -118.209945,
+      "stopIds": [
+        "80312"
+      ]
     },
     {
       "stop_id": "80313S",
       "name": "Lakewood Blvd Station",
       "lat": 33.91307,
-      "lon": -118.1406
+      "lon": -118.1406,
+      "stopIds": [
+        "80313"
+      ]
     },
     {
       "stop_id": "80314S",
       "name": "Norwalk Station",
       "lat": 33.914033,
-      "lon": -118.104717
+      "lon": -118.104717,
+      "stopIds": [
+        "80314"
+      ]
     },
     {
       "stop_id": "80401S",
       "name": "Atlantic Station",
       "lat": 34.033398,
-      "lon": -118.154469
+      "lon": -118.154469,
+      "stopIds": [
+        "80401"
+      ]
     },
     {
       "stop_id": "80402S",
       "name": "East LA Civic Center Station",
       "lat": 34.033364,
-      "lon": -118.161206
+      "lon": -118.161206,
+      "stopIds": [
+        "80402"
+      ]
     },
     {
       "stop_id": "80403S",
       "name": "Maravilla Station",
       "lat": 34.033319,
-      "lon": -118.16814
+      "lon": -118.16814,
+      "stopIds": [
+        "80403"
+      ]
     },
     {
       "stop_id": "80404S",
       "name": "Indiana Station",
       "lat": 34.0343,
-      "lon": -118.192182
+      "lon": -118.192182,
+      "stopIds": [
+        "80404"
+      ]
     },
     {
       "stop_id": "80405S",
       "name": "Soto Station",
       "lat": 34.043747,
-      "lon": -118.210061
+      "lon": -118.210061,
+      "stopIds": [
+        "80405"
+      ]
     },
     {
       "stop_id": "80406S",
       "name": "Mariachi Plaza / Boyle Heights Station",
       "lat": 34.047215,
-      "lon": -118.219648
+      "lon": -118.219648,
+      "stopIds": [
+        "80406"
+      ]
     },
     {
       "stop_id": "80407S",
       "name": "Pico / Aliso Station",
       "lat": 34.047634,
-      "lon": -118.22594
+      "lon": -118.22594,
+      "stopIds": [
+        "80407"
+      ]
     },
     {
       "stop_id": "80410S",
       "name": "Chinatown Station",
       "lat": 34.063861,
-      "lon": -118.23584
+      "lon": -118.23584,
+      "stopIds": [
+        "80410"
+      ]
     },
     {
       "stop_id": "80411S",
       "name": "Lincoln Heights / Cypress Park Station",
       "lat": 34.080949,
-      "lon": -118.220429
+      "lon": -118.220429,
+      "stopIds": [
+        "80411"
+      ]
     },
     {
       "stop_id": "80412S",
       "name": "Heritage Square / Arroyo Station",
       "lat": 34.087227,
-      "lon": -118.213213
+      "lon": -118.213213,
+      "stopIds": [
+        "80412"
+      ]
     },
     {
       "stop_id": "80413S",
       "name": "Southwest Museum Station",
       "lat": 34.098243,
-      "lon": -118.206712
+      "lon": -118.206712,
+      "stopIds": [
+        "80413"
+      ]
     },
     {
       "stop_id": "80414S",
       "name": "Highland Park Station",
       "lat": 34.111179,
-      "lon": -118.192606
+      "lon": -118.192606,
+      "stopIds": [
+        "80414"
+      ]
     },
     {
       "stop_id": "80415S",
       "name": "South Pasadena Station",
       "lat": 34.115186,
-      "lon": -118.157886
+      "lon": -118.157886,
+      "stopIds": [
+        "80415"
+      ]
     },
     {
       "stop_id": "80416S",
       "name": "Fillmore Station",
       "lat": 34.133521,
-      "lon": -118.148126
+      "lon": -118.148126,
+      "stopIds": [
+        "80416"
+      ]
     },
     {
       "stop_id": "80417S",
       "name": "Del Mar Station",
       "lat": 34.14191,
-      "lon": -118.148214
+      "lon": -118.148214,
+      "stopIds": [
+        "80417"
+      ]
     },
     {
       "stop_id": "80418S",
       "name": "Memorial Park Station",
       "lat": 34.148356,
-      "lon": -118.147512
+      "lon": -118.147512,
+      "stopIds": [
+        "80418"
+      ]
     },
     {
       "stop_id": "80419S",
       "name": "Lake Station",
       "lat": 34.151806,
-      "lon": -118.13139
+      "lon": -118.13139,
+      "stopIds": [
+        "80419"
+      ]
     },
     {
       "stop_id": "80420S",
       "name": "Allen Station",
       "lat": 34.152417,
-      "lon": -118.114348
+      "lon": -118.114348,
+      "stopIds": [
+        "80420"
+      ]
     },
     {
       "stop_id": "80421S",
       "name": "Sierra Madre Villa Station",
       "lat": 34.147752,
-      "lon": -118.081212
+      "lon": -118.081212,
+      "stopIds": [
+        "80421"
+      ]
     },
     {
       "stop_id": "80422S",
       "name": "Arcadia Station",
       "lat": 34.14286,
-      "lon": -118.029199
+      "lon": -118.029199,
+      "stopIds": [
+        "80422"
+      ]
     },
     {
       "stop_id": "80423S",
       "name": "Monrovia Station",
       "lat": 34.133155,
-      "lon": -118.003473
+      "lon": -118.003473,
+      "stopIds": [
+        "80423"
+      ]
     },
     {
       "stop_id": "80424S",
       "name": "Duarte / City of Hope Station",
       "lat": 34.132518,
-      "lon": -117.96768
+      "lon": -117.96768,
+      "stopIds": [
+        "80424"
+      ]
     },
     {
       "stop_id": "80425S",
       "name": "Irwindale Station",
       "lat": 34.129048,
-      "lon": -117.932506
+      "lon": -117.932506,
+      "stopIds": [
+        "80425"
+      ]
     },
     {
       "stop_id": "80426S",
       "name": "Azusa Downtown Station",
       "lat": 34.135863,
-      "lon": -117.906631
+      "lon": -117.906631,
+      "stopIds": [
+        "80426"
+      ]
     },
     {
       "stop_id": "80427S",
       "name": "APU / Citrus College Station",
       "lat": 34.136814,
-      "lon": -117.891636
+      "lon": -117.891636,
+      "stopIds": [
+        "80427"
+      ]
     },
     {
       "stop_id": "80701S",
       "name": "Aviation / Century Station",
       "lat": 33.94557205,
-      "lon": -118.378683
+      "lon": -118.378683,
+      "stopIds": [
+        "80701"
+      ]
     },
     {
       "stop_id": "80702S",
       "name": "LAX / Metro Transit Center",
       "lat": 33.9500753,
-      "lon": -118.37866
+      "lon": -118.37866,
+      "stopIds": [
+        "80702"
+      ]
     },
     {
       "stop_id": "80703S",
       "name": "Westchester / Veterans Station",
       "lat": 33.96203144,
-      "lon": -118.374378
+      "lon": -118.374378,
+      "stopIds": [
+        "80703"
+      ]
     },
     {
       "stop_id": "80704S",
       "name": "Downtown Inglewood Station",
       "lat": 33.96715635,
-      "lon": -118.3514966
+      "lon": -118.3514966,
+      "stopIds": [
+        "80704"
+      ]
     },
     {
       "stop_id": "80705S",
       "name": "Fairview Heights Station",
       "lat": 33.97525155,
-      "lon": -118.3360716
+      "lon": -118.3360716,
+      "stopIds": [
+        "80705"
+      ]
     },
     {
       "stop_id": "80706S",
       "name": "Hyde Park Station",
       "lat": 33.98818653,
-      "lon": -118.3308158
+      "lon": -118.3308158,
+      "stopIds": [
+        "80706"
+      ]
     },
     {
       "stop_id": "80707S",
       "name": "Leimert Park Station",
       "lat": 34.00390927,
-      "lon": -118.3320162
+      "lon": -118.3320162,
+      "stopIds": [
+        "80707"
+      ]
     },
     {
       "stop_id": "80708S",
       "name": "Martin Luther King Jr Station",
       "lat": 34.00956339,
-      "lon": -118.3353594
+      "lon": -118.3353594,
+      "stopIds": [
+        "80708"
+      ]
     },
     {
       "stop_id": "80709S",
       "name": "Expo / Crenshaw K-Line Station",
       "lat": 34.02215554,
-      "lon": -118.3348508
+      "lon": -118.3348508,
+      "stopIds": [
+        "80709"
+      ]
     },
     {
       "stop_id": "81401S",
       "name": "Grand Ave Arts / Bunker Hill Station",
       "lat": 34.05472448,
-      "lon": -118.2515307
+      "lon": -118.2515307,
+      "stopIds": [
+        "81401"
+      ]
     },
     {
       "stop_id": "81402S",
       "name": "Historic Broadway Station",
       "lat": 34.05215607,
-      "lon": -118.2463211
+      "lon": -118.2463211,
+      "stopIds": [
+        "81402"
+      ]
     },
     {
       "stop_id": "81403S",
       "name": "Little Tokyo / Arts District Station",
       "lat": 34.04884524,
-      "lon": -118.2387567
+      "lon": -118.2387567,
+      "stopIds": [
+        "81403"
+      ]
     }
   ],
   "stopSequences": {

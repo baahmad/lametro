@@ -1,5 +1,6 @@
 package com.lametro.lametro_tracker.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,22 +27,29 @@ public class VehicleController {
 
     @GetMapping("/api/trip-updates")
     public List<StopTimeUpdate> getStopTimeUpdates(
-         @RequestParam(required = false) String routeId,
-         @RequestParam(required = false) Integer directionId,
-         @RequestParam(required = false) String stopId
+        @RequestParam(required = false) String routeId,
+        @RequestParam(required = false) Integer directionId,
+        @RequestParam(required = false) String stopIds  // Changed from stopId to stopIds
     ){
         List<StopTimeUpdate> updates = gtfsRtService.getTripUpdates();
 
-        String stopIdPrefix = stopId != null && stopId.endsWith("S") 
-            ? stopId.substring(0, stopId.length() - 1) 
-            : stopId;
+        // Parse comma-separated stop IDs into prefixes for matching.
+        List<String> stopIdPrefixes = null;
+        if (stopIds != null && !stopIds.isEmpty()) {
+            stopIdPrefixes = Arrays.stream(stopIds.split(","))
+                .map(id -> id.endsWith("S") ? id.substring(0, id.length() - 1) : id)
+                .toList();
+        }
+        
+        final List<String> prefixes = stopIdPrefixes;
 
         return updates.stream()
             .filter(u -> routeId == null || u.getRouteId().equals(routeId))
             .filter(u -> directionId == null || u.getDirectionId() == directionId)
-            .filter(u -> stopId == null || u.getStopId().startsWith(stopIdPrefix))
+            .filter(u -> prefixes == null || prefixes.stream().anyMatch(p -> u.getStopId().startsWith(p)))
             .sorted((a, b) -> Long.compare(a.getArrivalTime(), b.getArrivalTime()))
             .limit(2)
             .toList();
     }
+
 }
