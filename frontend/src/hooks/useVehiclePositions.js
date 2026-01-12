@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const API_URL = 'http://localhost:8080/api/vehicles';
+import { API_BASE_URL } from '../config';
+const API_URL = `${API_BASE_URL}/api/vehicles`;
 
 function useVehiclePositions(pollInterval = 10000) {
   const [vehicles, setVehicles] = useState([]);

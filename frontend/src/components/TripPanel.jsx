@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './TripPanel.css';
 import railLines from '../data/railLines.json';
+import { API_BASE_URL } from '../config';
+
 
 function TripPanel({ selectedStation }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +26,7 @@ function TripPanel({ selectedStation }) {
             setLoading(true);
             // Build stopIds parameter from station's stopIds array
             const stopIdsParam = selectedStation.stopIds?.join(',') || selectedStation.stop_id;
-            fetch(`http://localhost:8080/api/trip-updates?routeId=${selectedLine}&directionId=${selectedDirection}&stopIds=${stopIdsParam}`)
+            fetch(`${API_BASE_URL}/api/trip-updates?routeId=${selectedLine}&directionId=${selectedDirection}&stopIds=${stopIdsParam}`)
                 .then(res => res.json())
                 .then(data => {
                     setArrivals(data);
