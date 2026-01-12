@@ -5,7 +5,7 @@ import railLines from '../data/railLines.json';
 
 
 const LA_CENTER = [34.0522, -118.2437];
-const SPRUCE_GOOSE = [33.9211, -118.3964];
+const SPRUCE_GOOSE = [33.9745, -118.4193];
 const gooseIcon = L.divIcon({
     html: '🪿',
     className: 'goose-marker',
@@ -102,7 +102,7 @@ function MetroMap({ vehicles, onStationClick }) {
 
             {/* Spruce Goose Campus */}
             <Marker position={SPRUCE_GOOSE} icon={gooseIcon}>
-                <Tooltip>da Spruce Goose ❤️</Tooltip>
+                <Tooltip>Spruce Goose!!</Tooltip>
             </Marker>
 
             {/* Map labels. */}
