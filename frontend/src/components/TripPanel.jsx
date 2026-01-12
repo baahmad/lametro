@@ -4,12 +4,17 @@ import railLines from '../data/railLines.json';
 import { API_BASE_URL } from '../config';
 
 
-function TripPanel({ selectedStation }) {
+function TripPanel({ selectedStation, onStationSelect }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedLine, setSelectedLine] = useState('');
     const [selectedDirection, setSelectedDirection] = useState('');
     const [arrivals, setArrivals] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [showResults, setShowResults] = useState(false);
+    const filteredStations = railLines.stations.filter(station =>
+        station.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     // Open the panel when a station is selected.
     useEffect(() => {
@@ -55,6 +60,33 @@ function TripPanel({ selectedStation }) {
             
             {isOpen && (
                 <div className="panel-content">
+
+                    <div className="search-container">
+                        <input
+                            type="text"
+                            placeholder="Search stations..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onFocus={() => setShowResults(true)}
+                        />
+                        {showResults && searchQuery && (
+                            <ul className="search-results">
+                                {filteredStations.map(station => (
+                                    <li 
+                                        key={station.stop_id}
+                                        onClick={() => {
+                                            onStationSelect(station);
+                                            setSearchQuery('');
+                                            setShowResults(false);
+                                        }}
+                                    >
+                                        {station.name}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+
                     {selectedStation ? (
                         <>
                             <h2>{selectedStation.name}</h2>

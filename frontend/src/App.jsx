@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       {error && <div className="error">Error: {error}</div>}
-      <TripPanel selectedStation={selectedStation}/>
+      <TripPanel selectedStation={selectedStation} onStationSelect={setSelectedStation}/>
       <MetroMap vehicles={vehicles} onStationClick={setSelectedStation} />
       <MapLegend/>
     </div>
