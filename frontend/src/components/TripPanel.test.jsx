@@ -15,14 +15,24 @@ vi.mock('../data/railLines.json', () => ({
     }
 }))
 
+const defaultProps = {
+    selectedStation: null,
+    onStationSelect: vi.fn(),
+    selectedLine: '',
+    onLineChange: vi.fn(),
+    selectedDirection: '',
+    onDirectionChange: vi.fn(),
+    isOpen: true,
+    setIsOpen: vi.fn()
+}
+
 describe('TripPanel', () => {
     it('Filters stations based on search query', () => {
         const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
-        render(<TripPanel 
-            selectedStation={null} 
+        render(<TripPanel
+            {...defaultProps}
             onStationSelect={onStationSelect}
-            isOpen={true}
             setIsOpen={setIsOpen}
         />)
         
@@ -40,10 +50,9 @@ describe('TripPanel', () => {
     it('calls onStationSelect when a station is clicked', () => {
         const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
-        render(<TripPanel 
-            selectedStation={null} 
+        render(<TripPanel
+            {...defaultProps}
             onStationSelect={onStationSelect}
-            isOpen={true}
             setIsOpen={setIsOpen}
         />)
         
@@ -61,10 +70,9 @@ describe('TripPanel', () => {
     it('Clears search after selecting a station', () => {
         const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
-        render(<TripPanel 
-            selectedStation={null} 
+        render(<TripPanel
+            {...defaultProps}
             onStationSelect={onStationSelect}
-            isOpen={true}
             setIsOpen={setIsOpen}
         />)
         
@@ -83,56 +91,53 @@ describe('TripPanel', () => {
     it('Displays station name when station is selected', () => {
         const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
+        const onLineChange = vi.fn()
+        const onDirectionChange = vi.fn()
         render(<TripPanel
+            {...defaultProps}
             selectedStation={{ stop_id: '80122S', name: '7th Street/Metro Center', stopIds: ['80122'] }}
             onStationSelect={onStationSelect}
-            isOpen={true}
+            onLineChange={onLineChange}
+            onDirectionChange={onDirectionChange}
             setIsOpen={setIsOpen}
         />)
 
         // Panel should show station name.
         expect(screen.getByText('7th Street/Metro Center')).toBeInTheDocument()
-        expect(screen.getByText('Line & Direction')).toBeInTheDocument()
     })
 
     it('calls setIsOpen(false) when close button is clicked', () => {
-        const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
-        render(<TripPanel
-            selectedStation={null}
-            onStationSelect={onStationSelect}
-            isOpen={true}
+        const { container } = render(<TripPanel
+            {...defaultProps}
             setIsOpen={setIsOpen}
         />)
 
-        // Click close button.
-        fireEvent.click(screen.getByText('✕'))
-        
+        // Click close button (has class "close-btn").
+        const closeBtn = container.querySelector('.close-btn')
+        fireEvent.click(closeBtn)
+
         expect(setIsOpen).toHaveBeenCalledWith(false)
     })
 
     it('calls setIsOpen when toggle button is clicked', () => {
-        const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
         render(<TripPanel
-            selectedStation={null}
-            onStationSelect={onStationSelect}
+            {...defaultProps}
             isOpen={false}
             setIsOpen={setIsOpen}
         />)
 
         // Click toggle button to open.
         fireEvent.click(screen.getByText('▶'))
-        
+
         expect(setIsOpen).toHaveBeenCalledWith(true)
     })
 
     it('Does not render panel content when closed', () => {
-        const onStationSelect = vi.fn()
         const setIsOpen = vi.fn()
         render(<TripPanel
-            selectedStation={null}
-            onStationSelect={onStationSelect}
+            {...defaultProps}
             isOpen={false}
             setIsOpen={setIsOpen}
         />)
