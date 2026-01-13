@@ -29,7 +29,7 @@ public class VehicleController {
     public List<StopTimeUpdate> getStopTimeUpdates(
         @RequestParam(required = false) String routeId,
         @RequestParam(required = false) Integer directionId,
-        @RequestParam(required = false) String stopIds  // Changed from stopId to stopIds
+        @RequestParam(required = false) String stopIds
     ){
         List<StopTimeUpdate> updates = gtfsRtService.getTripUpdates();
 
@@ -52,4 +52,13 @@ public class VehicleController {
             .toList();
     }
 
+    @GetMapping("/api/trip-details")
+    public List<StopTimeUpdate> getTripDetails(@RequestParam String tripId) {
+        List<StopTimeUpdate> updates = gtfsRtService.getTripUpdates();
+        
+        return updates.stream()
+            .filter(u -> u.getTripId().equals(tripId))
+            .sorted((a, b) -> Long.compare(a.getArrivalTime(), b.getArrivalTime()))
+            .toList();
+    }
 }

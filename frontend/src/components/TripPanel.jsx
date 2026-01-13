@@ -10,6 +10,8 @@ function TripPanel({ selectedStation, onStationSelect }) {
     const [selectedDirection, setSelectedDirection] = useState('');
     const [arrivals, setArrivals] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [selectedTrip, setSelectedTrip] = useState(null);
+    const [tripDetails, setTripDetails] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [showResults, setShowResults] = useState(false);
     const filteredStations = railLines.stations.filter(station =>
@@ -44,6 +46,17 @@ function TripPanel({ selectedStation, onStationSelect }) {
 
         }
     }, [selectedLine, selectedDirection, selectedStation]);
+
+    useEffect(() => {
+        if (selectedTrip) {
+            fetch(`${API_BASE_URL}/api/trip-details?tripId=${selectedTrip}`)
+                .then(res => res.json())
+                .then(data => setTripDetails(data))
+                .catch(err => console.error('Error fetching trip details:', err));
+        } else {
+            setTripDetails([]);
+        }
+    }, [selectedTrip]);
 
     const availableLines = selectedStation 
         ? (railLines.stationLines[selectedStation.stop_id] || [])
@@ -122,9 +135,38 @@ function TripPanel({ selectedStation, onStationSelect }) {
                                         <p>Loading...</p>
                                     ) : arrivals.length > 0 ? (
                                         arrivals.map((arrival, idx) => (
-                                            <p key={idx}>
-                                                {new Date(arrival.arrivalTime * 1000).toLocaleTimeString()}
-                                            </p>
+                                            <div key={idx} className="arrival-item">
+                                                <p 
+                                                    className="arrival-time"
+                                                    onClick={() => setSelectedTrip(
+                                                        selectedTrip === arrival.tripId ? null : arrival.tripId
+                                                    )}
+                                                >
+                                                    {new Date(arrival.arrivalTime * 1000).toLocaleTimeString()}
+                                                    <span className="expand-icon">
+                                                        {selectedTrip === arrival.tripId ? '▼' : '▶'}
+                                                    </span>
+                                                </p>
+                                                {selectedTrip === arrival.tripId && tripDetails.length > 0 && (
+                                                    <ul className="trip-stops">
+                                                        {tripDetails.map((stop, stopIdx) => {
+                                                            const station = railLines.stations.find(s => 
+                                                                s.stopIds?.some(id => stop.stopId.startsWith(id))
+                                                            );
+                                                            return (
+                                                                <li key={stopIdx}>
+                                                                    <span className="stop-time">
+                                                                        {new Date(stop.arrivalTime * 1000).toLocaleTimeString()}
+                                                                    </span>
+                                                                    <span className="stop-name">
+                                                                        {station?.name || stop.stopId}
+                                                                    </span>
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
+                                                )}
+                                            </div>
                                         ))
                                     ) : (
                                         <p>No upcoming arrivals</p>
