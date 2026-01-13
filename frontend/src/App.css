@@ -25,6 +25,10 @@ body {
   text-align: center;
 }
 
+.leaflet-control-attribution {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .leaflet-control-zoom {
         display: none;
