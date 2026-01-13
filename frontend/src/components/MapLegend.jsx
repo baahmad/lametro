@@ -1,29 +1,40 @@
+import { useState } from 'react';
 import './MapLegend.css';
 import railLines from '../data/railLines.json'
 
 function MapLegend({ isPanelOpen }) {
+    const [isExpanded, setIsExpanded] = useState(true);
+
     return (
-        <div className={`map-legend ${isPanelOpen ? 'panel-open' : ''}`}>
-            <h4>Legend</h4>
-            {railLines.features.map((line) => (
-                <div key={line.properties.route_id} className="legend-item">
-                    <span
-                        className="legend-line"
-                        style={{ backgroundColor: line.properties.color}}
-                    />
-                    <span>{line.properties.name}</span>
+        <div className={`map-legend ${isPanelOpen ? 'panel-open' : ''} ${isExpanded ? 'expanded' : 'collapsed'}`}>
+            <button 
+                className="legend-toggle"
+                onClick={() => setIsExpanded(!isExpanded)}
+            >
+                <span>Legend</span>
+                <span className="toggle-icon">{isExpanded ? '▼' : '▲'}</span>
+            </button>
+            {isExpanded && (
+                <div className="legend-content">
+                    {railLines.features.map((line) => (
+                        <div key={line.properties.route_id} className="legend-item">
+                            <span
+                                className="legend-line"
+                                style={{ backgroundColor: line.properties.color }}
+                            />
+                            <span>{line.properties.name}</span>
+                        </div>
+                    ))}
+                    <div className="legend-item">
+                        <span className="legend-dot vehicle" />
+                        <span>Train</span>
+                    </div>
+                    <div className="legend-item">
+                        <span className="legend-dot station" />
+                        <span>Station</span>
+                    </div>
                 </div>
-            ))}
-
-            <div className="legend-item">
-                <span className="legend-dot vehicle" />
-                <span>Vehicle</span>
-            </div>
-
-            <div className="legend-item">
-                <span className="legend-dot station" />
-                <span>Station</span>
-            </div>
+            )}
         </div>
     );
 }
