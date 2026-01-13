@@ -4,9 +4,16 @@ import railLines from '../data/railLines.json';
 import { API_BASE_URL } from '../config';
 
 
-function TripPanel({ selectedStation, onStationSelect, isOpen, setIsOpen }) {
-    const [selectedLine, setSelectedLine] = useState('');
-    const [selectedDirection, setSelectedDirection] = useState('');
+function TripPanel({ 
+    selectedStation, 
+    onStationSelect, 
+    selectedLine,
+    onLineChange,
+    selectedDirection,
+    onDirectionChange,
+    isOpen, 
+    setIsOpen 
+}) {
     const [arrivals, setArrivals] = useState([]);
     const [loading, setLoading] = useState(false);
     const [selectedTrip, setSelectedTrip] = useState(null);
@@ -17,12 +24,11 @@ function TripPanel({ selectedStation, onStationSelect, isOpen, setIsOpen }) {
         station.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Open the panel when a station is selected.
     useEffect(() => {
         if (selectedStation) {
             setIsOpen(true);
-            setSelectedLine('');
-            setSelectedDirection('');
+            onLineChange('');
+            onDirectionChange('');
             setArrivals([]);
         }
     }, [selectedStation]);
@@ -114,8 +120,8 @@ function TripPanel({ selectedStation, onStationSelect, isOpen, setIsOpen }) {
                                 value={`${selectedLine}_${selectedDirection}`}
                                 onChange={(e) => {
                                     const [line, dir] = e.target.value.split('_');
-                                    setSelectedLine(line);
-                                    setSelectedDirection(dir);
+                                    onLineChange(line);
+                                    onDirectionChange(dir);
                                 }}
                             >
                                 <option value="_">Select a line</option>
