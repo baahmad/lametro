@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './MapLegend.css';
+import AboutModal from './AboutModal';
 import railLines from '../data/railLines.json'
 
 function MapLegend({ isPanelOpen }) {
     const [isExpanded, setIsExpanded] = useState(true);
+    const [showAbout, setShowAbout] = useState(false);
 
     return (
         <div className={`map-legend ${isPanelOpen ? 'panel-open' : ''} ${isExpanded ? 'expanded' : 'collapsed'}`}>
@@ -33,6 +35,10 @@ function MapLegend({ isPanelOpen }) {
                         <span className="legend-dot station" />
                         <span>Station</span>
                     </div>
+                    <button className="about-link" onClick={() => setShowAbout(true)}>
+                        About
+                    </button>
+                    <AboutModal isOpen={showAbout} onClose={() => setShowAbout(false)} />
                 </div>
             )}
         </div>
