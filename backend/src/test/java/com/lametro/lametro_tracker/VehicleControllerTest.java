@@ -112,4 +112,22 @@ public class VehicleControllerTest {
             .andExpect(jsonPath("$").isEmpty());
     }
 
+    @Test
+    void getTripDetails_returnsStopsForTrip() throws Exception {
+        List<StopTimeUpdate> updates = List.of(
+            new StopTimeUpdate("trip1", "801", 0, "stop1", 1000L),
+            new StopTimeUpdate("trip1", "801", 0, "stop2", 2000L),
+            new StopTimeUpdate("trip2", "801", 0, "stop3", 3000L)
+        );
+        when(gtfsRtService.getTripUpdates()).thenReturn(updates);
+
+        // Act and assert.
+        mockMvc.perform(get("/api/trip-details").param("tripId", "trip1"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.length()").value(2))
+            .andExpect(jsonPath("$[0].tripId").value("trip1"))
+            .andExpect(jsonPath("$[1].tripId").value("trip1"))
+            .andExpect(jsonPath("$[0].arrivalTime").value(1000L))
+            .andExpect(jsonPath("$[1].arrivalTime").value(2000L));
+    }
 }

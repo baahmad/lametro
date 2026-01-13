@@ -56,3 +56,50 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.arrival-item {
+    margin-bottom: 8px;
+}
+
+.arrival-time {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.arrival-time:hover {
+    background: #e8e8e8;
+}
+
+.expand-icon {
+    font-size: 10px;
+    color: #666;
+}
+
+.trip-stops {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0 16px;
+    border-left: 2px solid #ddd;
+}
+
+.trip-stops li {
+    padding: 4px 0 4px 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.stop-time {
+    font-size: 12px;
+    color: #666;
+    min-width: 80px;
+}
+
+.stop-name {
+    font-size: 13px;
+}

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import TripPanel from './TripPanel'
 
 // Mock the railLines data.
@@ -65,5 +65,17 @@ describe('TripPanel', () => {
         
         // Search should be cleared.
         expect(searchInput.value).toBe('')
+    })
+
+    it('Displays station name when station is selected', () => {
+        const onStationSelect = vi.fn()
+        render(<TripPanel
+            selectedStation={{ stop_id: '80122S', name: '7th Street/Metro Center', stopIds: ['80122'] }}
+            onStationSelect={onStationSelect}
+        />)
+
+        // Panel should auto-open and show station name
+        expect(screen.getByText('7th Street/Metro Center')).toBeInTheDocument()
+        expect(screen.getByText('Line & Direction')).toBeInTheDocument()
     })
 })
