@@ -40,7 +40,7 @@ function MetroMap({ vehicles, onStationClick, isPanelOpen }) {
         style={{ height: '100vh', width: '100%' }}
         >
             <ZoomTracker setZoom={setZoom} />
-            {!isPanelOpen && <ZoomControl position="topright" />}
+            <ZoomControl position="topright" />
             
             {/* Map. */}
             <TileLayer
