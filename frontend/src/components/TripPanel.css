@@ -73,29 +73,71 @@
     color: #555;
 }
 
-.panel-content select {
-    width: 100%;
-    padding: 10px 12px;
+.line-selector,
+.direction-selector {
     margin-bottom: 16px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: #fafafa;
-    color: #1a1a1a;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
 }
 
-.panel-content select:hover {
-    border-color: #bbb;
+.line-selector label,
+.direction-selector label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.line-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.line-pill {
+    padding: 8px 16px;
+    border: 2px solid;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.line-pill:hover {
+    opacity: 0.8;
+}
+
+.direction-toggle {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.direction-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    background: white;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.direction-btn:first-child {
+    border-right: 1px solid #ddd;
+}
+
+.direction-btn:hover {
     background: #f5f5f5;
 }
 
-.panel-content select:focus {
-    outline: none;
-    border-color: #0066cc;
-    background: white;
+.direction-btn.selected {
+    background: #1a1a1a;
+    color: white;
 }
 
 .search-container {
@@ -249,9 +291,14 @@
         padding-top: 60px;
     }
 
-    .panel-content select {
-        padding: 12px;
-        font-size: 16px;
+    .line-pill {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .direction-btn {
+        padding: 12px 16px;
+        font-size: 14px;
     }
 
     .arrival-time {

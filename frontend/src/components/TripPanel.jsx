@@ -115,29 +115,59 @@ function TripPanel({
                         <>
                             <h2>{selectedStation.name}</h2>
                             
-                            <label>Line & Direction</label>
-                            <select 
-                                value={`${selectedLine}_${selectedDirection}`}
-                                onChange={(e) => {
-                                    const [line, dir] = e.target.value.split('_');
-                                    onLineChange(line);
-                                    onDirectionChange(dir);
-                                }}
-                            >
-                                <option value="_">Select a line</option>
-                                {availableLines.map((line, idx) => {
-                                    const route = railLines.features.find(f => f.properties.route_id === line.route_id);
-                                    const directionType = route?.properties.directionType || 'north-south';
-                                    const directionLabel = directionType === 'north-south'
-                                        ? (line.direction_id === 1 ? 'Southbound' : 'Northbound')
-                                        : (line.direction_id === 1 ? 'Westbound' : 'Eastbound');
-                                    return (
-                                        <option key={idx} value={`${line.route_id}_${line.direction_id}`}>
-                                            {route?.properties.name || line.route_id} - {directionLabel}
-                                        </option>
-                                    );
-                                })}
-                            </select>
+                            {/* Line Selection */}
+                            <div className="line-selector">
+                                <label>Line</label>
+                                <div className="line-pills">
+                                    {[...new Set(availableLines.map(l => l.route_id))].map(routeId => {
+                                        const route = railLines.features.find(f => f.properties.route_id === routeId);
+                                        return (
+                                            <button
+                                                key={routeId}
+                                                className={`line-pill ${selectedLine === routeId ? 'selected' : ''}`}
+                                                style={{
+                                                    backgroundColor: selectedLine === routeId ? route?.properties.color : 'transparent',
+                                                    borderColor: route?.properties.color,
+                                                    color: selectedLine === routeId ? 'white' : route?.properties.color
+                                                }}
+                                                onClick={() => {
+                                                    onLineChange(routeId);
+                                                    onDirectionChange('');
+                                                }}
+                                            >
+                                                {route?.properties.name || routeId}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* Direction Selection */}
+                            {selectedLine && (
+                                <div className="direction-selector">
+                                    <label>Direction</label>
+                                    <div className="direction-toggle">
+                                        {availableLines
+                                            .filter(l => l.route_id === selectedLine)
+                                            .map(line => {
+                                                const route = railLines.features.find(f => f.properties.route_id === selectedLine);
+                                                const directionType = route?.properties.directionType || 'north-south';
+                                                const directionLabel = directionType === 'north-south'
+                                                    ? (line.direction_id === 1 ? 'Southbound' : 'Northbound')
+                                                    : (line.direction_id === 1 ? 'Westbound' : 'Eastbound');
+                                                return (
+                                                    <button
+                                                        key={line.direction_id}
+                                                        className={`direction-btn ${selectedDirection === String(line.direction_id) ? 'selected' : ''}`}
+                                                        onClick={() => onDirectionChange(String(line.direction_id))}
+                                                    >
+                                                        {directionLabel}
+                                                    </button>
+                                                );
+                                            })}
+                                    </div>
+                                </div>
+                            )}
 
                             {selectedLine && selectedDirection && (
                                 <div className="arrivals">
@@ -186,7 +216,7 @@ function TripPanel({
                             )}
                         </>
                     ) : (
-                        <p>Click a station on the map to see arrival times</p>
+                        <p>Search for or click a station on the map to see arrival times.</p>
                     )}
                 </div>
             )}
