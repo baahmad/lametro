@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import TripPanel from './TripPanel'
 
 // Mock the railLines data.
@@ -18,10 +18,13 @@ vi.mock('../data/railLines.json', () => ({
 describe('TripPanel', () => {
     it('Filters stations based on search query', () => {
         const onStationSelect = vi.fn()
-        render(<TripPanel selectedStation={null} onStationSelect={onStationSelect} />)
-        
-        // Open the panel.
-        fireEvent.click(screen.getByText('▶'))
+        const setIsOpen = vi.fn()
+        render(<TripPanel 
+            selectedStation={null} 
+            onStationSelect={onStationSelect}
+            isOpen={true}
+            setIsOpen={setIsOpen}
+        />)
         
         // Type in search.
         const searchInput = screen.getByPlaceholderText('Search stations...')
@@ -36,10 +39,15 @@ describe('TripPanel', () => {
 
     it('calls onStationSelect when a station is clicked', () => {
         const onStationSelect = vi.fn()
-        render(<TripPanel selectedStation={null} onStationSelect={onStationSelect} />)
+        const setIsOpen = vi.fn()
+        render(<TripPanel 
+            selectedStation={null} 
+            onStationSelect={onStationSelect}
+            isOpen={true}
+            setIsOpen={setIsOpen}
+        />)
         
-        // Open panel and search.
-        fireEvent.click(screen.getByText('▶'))
+        // Search for station.
         const searchInput = screen.getByPlaceholderText('Search stations...')
         fireEvent.focus(searchInput)
         fireEvent.change(searchInput, { target: { value: 'Union' } })
@@ -52,10 +60,15 @@ describe('TripPanel', () => {
 
     it('Clears search after selecting a station', () => {
         const onStationSelect = vi.fn()
-        render(<TripPanel selectedStation={null} onStationSelect={onStationSelect} />)
+        const setIsOpen = vi.fn()
+        render(<TripPanel 
+            selectedStation={null} 
+            onStationSelect={onStationSelect}
+            isOpen={true}
+            setIsOpen={setIsOpen}
+        />)
         
-        // Open panel and search.
-        fireEvent.click(screen.getByText('▶'))
+        // Search for station.
         const searchInput = screen.getByPlaceholderText('Search stations...')
         fireEvent.focus(searchInput)
         fireEvent.change(searchInput, { target: { value: 'Union' } })
@@ -69,13 +82,62 @@ describe('TripPanel', () => {
 
     it('Displays station name when station is selected', () => {
         const onStationSelect = vi.fn()
+        const setIsOpen = vi.fn()
         render(<TripPanel
             selectedStation={{ stop_id: '80122S', name: '7th Street/Metro Center', stopIds: ['80122'] }}
             onStationSelect={onStationSelect}
+            isOpen={true}
+            setIsOpen={setIsOpen}
         />)
 
-        // Panel should auto-open and show station name
+        // Panel should show station name.
         expect(screen.getByText('7th Street/Metro Center')).toBeInTheDocument()
         expect(screen.getByText('Line & Direction')).toBeInTheDocument()
+    })
+
+    it('calls setIsOpen(false) when close button is clicked', () => {
+        const onStationSelect = vi.fn()
+        const setIsOpen = vi.fn()
+        render(<TripPanel
+            selectedStation={null}
+            onStationSelect={onStationSelect}
+            isOpen={true}
+            setIsOpen={setIsOpen}
+        />)
+
+        // Click close button.
+        fireEvent.click(screen.getByText('✕'))
+        
+        expect(setIsOpen).toHaveBeenCalledWith(false)
+    })
+
+    it('calls setIsOpen when toggle button is clicked', () => {
+        const onStationSelect = vi.fn()
+        const setIsOpen = vi.fn()
+        render(<TripPanel
+            selectedStation={null}
+            onStationSelect={onStationSelect}
+            isOpen={false}
+            setIsOpen={setIsOpen}
+        />)
+
+        // Click toggle button to open.
+        fireEvent.click(screen.getByText('▶'))
+        
+        expect(setIsOpen).toHaveBeenCalledWith(true)
+    })
+
+    it('Does not render panel content when closed', () => {
+        const onStationSelect = vi.fn()
+        const setIsOpen = vi.fn()
+        render(<TripPanel
+            selectedStation={null}
+            onStationSelect={onStationSelect}
+            isOpen={false}
+            setIsOpen={setIsOpen}
+        />)
+
+        // Search input should not be visible when panel is closed
+        expect(screen.queryByPlaceholderText('Search stations...')).not.toBeInTheDocument()
     })
 })

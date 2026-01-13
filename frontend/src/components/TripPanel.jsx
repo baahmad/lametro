@@ -4,8 +4,7 @@ import railLines from '../data/railLines.json';
 import { API_BASE_URL } from '../config';
 
 
-function TripPanel({ selectedStation, onStationSelect }) {
-    const [isOpen, setIsOpen] = useState(false);
+function TripPanel({ selectedStation, onStationSelect, isOpen, setIsOpen }) {
     const [selectedLine, setSelectedLine] = useState('');
     const [selectedDirection, setSelectedDirection] = useState('');
     const [arrivals, setArrivals] = useState([]);
@@ -73,6 +72,12 @@ function TripPanel({ selectedStation, onStationSelect }) {
             
             {isOpen && (
                 <div className="panel-content">
+                    <button 
+                        className="close-btn"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        ✕
+                    </button>
 
                     <div className="search-container">
                         <input
