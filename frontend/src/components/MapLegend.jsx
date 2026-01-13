@@ -4,7 +4,7 @@ import AboutModal from './AboutModal';
 import railLines from '../data/railLines.json'
 
 function MapLegend({ isPanelOpen }) {
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(() => window.innerWidth > 768);
     const [showAbout, setShowAbout] = useState(false);
 
     return (
