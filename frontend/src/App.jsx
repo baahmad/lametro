@@ -6,7 +6,7 @@ import useVehiclePositions from './hooks/useVehiclePositions';
 import './App.css';
 
 function App() {
-  const { vehicles, error } = useVehiclePositions(10000);
+  const { vehicles, error } = useVehiclePositions(15000);
   const [selectedStation, setSelectedStation] = useState(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 

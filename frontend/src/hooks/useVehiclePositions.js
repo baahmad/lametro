@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../config';
 const API_URL = `${API_BASE_URL}/api/vehicles`;
 
-function useVehiclePositions(pollInterval = 10000) {
+function useVehiclePositions(pollInterval = 15000) {
   const [vehicles, setVehicles] = useState([]);
   const [error, setError] = useState(null);
 
