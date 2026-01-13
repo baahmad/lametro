@@ -19,8 +19,18 @@ public class GtfsRtService {
 
     @Value("${lametro.api.key}")
     private String apiKey;
-    
+
+    private static final long CACHE_TTL_MS = 15_000;
+    private List<VehiclePosition> vehiclePositionsCache = new ArrayList<>();
+    private long vehiclePositionsCacheTime = 0;
+    private List<StopTimeUpdate> tripUpdatesCache = new ArrayList<>();
+    private long tripUpdatesCacheTime = 0;
+
     public List<VehiclePosition> getVehiclePositions(){
+        long now = System.currentTimeMillis();
+        if (now - vehiclePositionsCacheTime < CACHE_TTL_MS && !vehiclePositionsCache.isEmpty()) {
+            return vehiclePositionsCache;
+        }
         List<VehiclePosition> positions = new ArrayList<>();
         try {
             URI uri = new URI("https://api.goswift.ly/real-time/lametro-rail/gtfs-rt-vehicle-positions");
@@ -47,15 +57,25 @@ public class GtfsRtService {
                         positions.add(pos);
                     }
                 }
+
+                // Update cache.
+                vehiclePositionsCache = positions;
+                vehiclePositionsCacheTime = now;
             }
         } catch (Exception e) {
             System.err.println("Error fetching GTFS-RT data: " + e.getMessage());
+            if (!vehiclePositionsCache.isEmpty()) {
+                return vehiclePositionsCache;
+            }
         }
-
         return positions;
     }
 
     public List<StopTimeUpdate> getTripUpdates() {
+        long now = System.currentTimeMillis();
+        if (now - tripUpdatesCacheTime < CACHE_TTL_MS && !tripUpdatesCache.isEmpty()) {
+            return tripUpdatesCache;
+        }
         List<StopTimeUpdate> updates = new ArrayList<>();
         try {
             URI uri = new URI("https://api.goswift.ly/real-time/lametro-rail/gtfs-rt-trip-updates");
@@ -79,9 +99,16 @@ public class GtfsRtService {
                         }
                     }
                 }
+
+                // Update cache.
+                tripUpdatesCache = updates;
+                tripUpdatesCacheTime = now;
             }
         } catch (Exception e) {
             System.err.println("Error fetching GTFS-RT trip updates: " + e.getMessage());
+            if (!tripUpdatesCache.isEmpty()) {
+                return tripUpdatesCache;
+            }
         }
         return updates;
     }
