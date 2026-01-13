@@ -30,7 +30,7 @@ function ZoomTracker({ setZoom }) {
     return null;
 }
 
-function MetroMap({ vehicles, onStationClick }) {
+function MetroMap({ vehicles, onStationClick, isPanelOpen }) {
     const [zoom, setZoom] = useState(11)
     return (
         <MapContainer 
@@ -40,7 +40,7 @@ function MetroMap({ vehicles, onStationClick }) {
         style={{ height: '100vh', width: '100%' }}
         >
             <ZoomTracker setZoom={setZoom} />
-            <ZoomControl position="topright" />
+            {!isPanelOpen && <ZoomControl position="topright" />}
             
             {/* Map. */}
             <TileLayer

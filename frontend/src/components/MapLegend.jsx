@@ -1,9 +1,9 @@
 import './MapLegend.css';
 import railLines from '../data/railLines.json'
 
-function MapLegend() {
+function MapLegend({ isPanelOpen }) {
     return (
-        <div className="map-legend">
+        <div className={`map-legend ${isPanelOpen ? 'panel-open' : ''}`}>
             <h4>Legend</h4>
             {railLines.features.map((line) => (
                 <div key={line.properties.route_id} className="legend-item">

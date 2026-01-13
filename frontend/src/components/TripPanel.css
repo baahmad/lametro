@@ -36,6 +36,7 @@
     padding: 20px;
     width: 100%;
     overflow-y: auto;
+    position: relative;
 }
 
 .panel-content h2 {
@@ -102,4 +103,61 @@
 
 .stop-name {
     font-size: 13px;
+}
+
+.close-btn {
+    display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .trip-panel.open {
+        width: 100%;
+    }
+
+    .trip-panel.open .toggle-btn {
+        display: none;
+    }
+
+    .toggle-btn {
+        width: 32px;
+        height: 80px;
+        right: -32px;
+    }
+
+    .panel-content {
+        padding: 16px;
+    }
+
+    .panel-content select {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .arrival-time {
+        padding: 12px;
+        min-height: 44px;
+    }
+
+    .search-container input {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .trip-stops li {
+        padding: 8px 0 8px 12px;
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px;
+        color: #666;
+    }
 }
