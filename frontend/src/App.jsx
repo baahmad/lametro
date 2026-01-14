@@ -16,6 +16,7 @@ function App() {
   const [selectedLine, setSelectedLine] = useState('');
   const [selectedDirection, setSelectedDirection] = useState('');
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   // Read URL params on mount.
   useEffect(() => {
@@ -33,22 +34,25 @@ function App() {
         if (direction) setSelectedDirection(direction);
       }
     }
+    setIsInitialized(true);
   }, []);
 
-  // Update URL when state changes.
+  // Update URL when state changes (only after initial load).
   useEffect(() => {
+    if (!isInitialized) return;
+
     const params = new URLSearchParams();
     if (selectedStation) {
       params.set('station', selectedStation.stop_id);
       if (selectedLine) params.set('line', selectedLine);
       if (selectedDirection) params.set('direction', selectedDirection);
     }
-    
-    const newUrl = params.toString() 
+
+    const newUrl = params.toString()
       ? `${window.location.pathname}?${params.toString()}`
       : window.location.pathname;
     window.history.replaceState({}, '', newUrl);
-  }, [selectedStation, selectedLine, selectedDirection]);
+  }, [selectedStation, selectedLine, selectedDirection, isInitialized]);
 
   return (
     <div className="App">
