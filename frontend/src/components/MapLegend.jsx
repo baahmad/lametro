@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import './MapLegend.css';
 import AboutModal from './AboutModal';
-import railLines from '../data/railLines.json'
+import railLines from '../data/railLines.json';
 
+/**
+ * Collapsible legend component showing rail line colors and map symbols.
+ * @param {boolean} isPanelOpen - Whether the trip panel is open (affects positioning).
+ */
 function MapLegend({ isPanelOpen }) {
     const [isExpanded, setIsExpanded] = useState(() => window.innerWidth > 768);
     const [showAbout, setShowAbout] = useState(false);

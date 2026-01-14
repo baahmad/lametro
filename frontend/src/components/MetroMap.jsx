@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import railLines from '../data/railLines.json';
 
+/**
+ * Interactive Leaflet map component displaying LA Metro rail lines, stations, and vehicles.
+ * @param {Array} vehicles - Array of vehicle position objects to display on the map.
+ * @param {function} onStationClick - Callback when a station marker is clicked.
+ * @param {boolean} isPanelOpen - Whether the trip panel is open.
+ */
 
 const LA_CENTER = [34.0522, -118.2437];
 const SPRUCE_GOOSE = [33.9745, -118.4193];

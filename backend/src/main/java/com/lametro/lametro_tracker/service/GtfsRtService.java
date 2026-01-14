@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.InputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import com.lametro.lametro_tracker.model.VehiclePosition;
 
 @Service
 public class GtfsRtService {
+
+    private static final Logger log = LoggerFactory.getLogger(GtfsRtService.class);
 
     @Value("${lametro.api.key}")
     private String apiKey;
@@ -63,7 +67,7 @@ public class GtfsRtService {
                 vehiclePositionsCacheTime = now;
             }
         } catch (Exception e) {
-            System.err.println("Error fetching GTFS-RT data: " + e.getMessage());
+            log.error("Error fetching GTFS-RT vehicle positions", e);
             if (!vehiclePositionsCache.isEmpty()) {
                 return vehiclePositionsCache;
             }
@@ -105,7 +109,7 @@ public class GtfsRtService {
                 tripUpdatesCacheTime = now;
             }
         } catch (Exception e) {
-            System.err.println("Error fetching GTFS-RT trip updates: " + e.getMessage());
+            log.error("Error fetching GTFS-RT trip updates", e);
             if (!tripUpdatesCache.isEmpty()) {
                 return tripUpdatesCache;
             }
