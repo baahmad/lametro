@@ -100,8 +100,8 @@ direction_types = {
     "801": "north-south",  # A Line
     "802": "east-west",    # B Line
     "803": "east-west",    # C Line
+    "804": "east-west",    # E Line
     "805": "east-west",    # D Line
-    "806": "east-west",    # E Line
     "807": "north-south",  # K Line
 }
 
