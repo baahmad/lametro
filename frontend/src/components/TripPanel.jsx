@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './TripPanel.css';
 import railLines from '../data/railLines.json';
 import { API_BASE_URL } from '../config';
@@ -48,12 +48,17 @@ function TripPanel({
         getPanelStyle,
     } = usePanelSwipe(isOpen, setIsOpen, panelWidth);
 
+    const prevStationRef = useRef(null);
     useEffect(() => {
         if (selectedStation) {
             setIsOpen(true);
-            onLineChange('');
-            onDirectionChange('');
-            setArrivals([]);
+            // Only clear line/direction when station actually changes, not on initial load.
+            if (prevStationRef.current && prevStationRef.current.stop_id !== selectedStation.stop_id) {
+                onLineChange('');
+                onDirectionChange('');
+                setArrivals([]);
+            }
+            prevStationRef.current = selectedStation;
         }
     }, [selectedStation]);
 
