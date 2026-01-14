@@ -145,4 +145,55 @@ describe('TripPanel', () => {
         // Search input should not be visible when panel is closed
         expect(screen.queryByPlaceholderText('Search stations...')).not.toBeInTheDocument()
     })
+
+    it('Does not clear line/direction on initial mount with station from URL', () => {
+        const onLineChange = vi.fn()
+        const onDirectionChange = vi.fn()
+
+        // Simulate loading from URL: station, line, and direction are all set initially.
+        render(<TripPanel
+            {...defaultProps}
+            selectedStation={{ stop_id: '80122S', name: '7th Street/Metro Center', stopIds: ['80122'] }}
+            selectedLine="801"
+            selectedDirection="0"
+            onLineChange={onLineChange}
+            onDirectionChange={onDirectionChange}
+        />)
+
+        // Line and direction should NOT be cleared on initial mount.
+        expect(onLineChange).not.toHaveBeenCalled()
+        expect(onDirectionChange).not.toHaveBeenCalled()
+    })
+
+    it('Clears line/direction when station changes after initial mount', () => {
+        const onLineChange = vi.fn()
+        const onDirectionChange = vi.fn()
+
+        const { rerender } = render(<TripPanel
+            {...defaultProps}
+            selectedStation={{ stop_id: '80122S', name: '7th Street/Metro Center', stopIds: ['80122'] }}
+            selectedLine="801"
+            selectedDirection="0"
+            onLineChange={onLineChange}
+            onDirectionChange={onDirectionChange}
+        />)
+
+        // Initial mount should not clear.
+        expect(onLineChange).not.toHaveBeenCalled()
+        expect(onDirectionChange).not.toHaveBeenCalled()
+
+        // Now change to a different station.
+        rerender(<TripPanel
+            {...defaultProps}
+            selectedStation={{ stop_id: '80121S', name: 'Civic Center', stopIds: ['80121'] }}
+            selectedLine="801"
+            selectedDirection="0"
+            onLineChange={onLineChange}
+            onDirectionChange={onDirectionChange}
+        />)
+
+        // Line and direction SHOULD be cleared when station changes.
+        expect(onLineChange).toHaveBeenCalledWith('')
+        expect(onDirectionChange).toHaveBeenCalledWith('')
+    })
 })
