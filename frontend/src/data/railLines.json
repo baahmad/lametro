@@ -16122,7 +16122,8 @@
         "route_id": "803",
         "name": "Metro C Line",
         "color": "#58A738",
-        "directionType": "east-west"
+        "directionType": "east-west",
+        "invertDirections": true
       },
       "geometry": {
         "type": "LineString",
@@ -18236,7 +18237,7 @@
         "route_id": "805",
         "name": "Metro D Line",
         "color": "#A05DA5",
-        "directionType": "north-south"
+        "directionType": "east-west"
       },
       "geometry": {
         "type": "LineString",
@@ -19430,7 +19431,7 @@
         "route_id": "804",
         "name": "Metro E Line",
         "color": "#FDB913",
-        "directionType": "east-west"
+        "directionType": "north-south"
       },
       "geometry": {
         "type": "LineString",

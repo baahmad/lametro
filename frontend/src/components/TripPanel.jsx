@@ -226,18 +226,29 @@ function TripPanel({
                             </div>
 
                             {/* Direction Selection */}
-                            {selectedLine && (
-                                <div className="direction-selector">
-                                    <label>Direction</label>
-                                    <div className="direction-toggle">
-                                        {availableLines
-                                            .filter(l => l.route_id === selectedLine)
-                                            .map(line => {
-                                                const route = railLines.features.find(f => f.properties.route_id === selectedLine);
-                                                const directionType = route?.properties.directionType || 'north-south';
+                            {selectedLine && (() => {
+                                const route = railLines.features.find(f => f.properties.route_id === selectedLine);
+                                const directionType = route?.properties.directionType || 'north-south';
+                                const invert = route?.properties.invertDirections;
+
+                                // Sort directions so Northbound/Eastbound (effectiveDirection=0) comes first
+                                const sortedLines = availableLines
+                                    .filter(l => l.route_id === selectedLine)
+                                    .sort((a, b) => {
+                                        const effA = invert ? (1 - a.direction_id) : a.direction_id;
+                                        const effB = invert ? (1 - b.direction_id) : b.direction_id;
+                                        return effA - effB;
+                                    });
+
+                                return (
+                                    <div className="direction-selector">
+                                        <label>Direction</label>
+                                        <div className="direction-toggle">
+                                            {sortedLines.map(line => {
+                                                const effectiveDirection = invert ? (1 - line.direction_id) : line.direction_id;
                                                 const directionLabel = directionType === 'north-south'
-                                                    ? (line.direction_id === 1 ? 'Southbound' : 'Northbound')
-                                                    : (line.direction_id === 1 ? 'Westbound' : 'Eastbound');
+                                                    ? (effectiveDirection === 1 ? 'Southbound' : 'Northbound')
+                                                    : (effectiveDirection === 1 ? 'Westbound' : 'Eastbound');
                                                 return (
                                                     <button
                                                         key={line.direction_id}
@@ -248,9 +259,10 @@ function TripPanel({
                                                     </button>
                                                 );
                                             })}
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                );
+                            })()}
 
                             {selectedLine && selectedDirection && (
                                 <div className="arrivals">

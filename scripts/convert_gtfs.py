@@ -100,14 +100,21 @@ direction_types = {
     "801": "north-south",  # A Line
     "802": "east-west",    # B Line
     "803": "east-west",    # C Line
-    "804": "east-west",    # D Line
+    "805": "east-west",    # D Line
     "806": "east-west",    # E Line
     "807": "north-south",  # K Line
+}
+
+# Some lines have inverted direction_id values in the GTFS data.
+invert_directions = {
+    "803": True,  # C Line: direction_id is reversed
 }
 
 for feature in geojson["features"]:
     route_id = feature["properties"]["route_id"]
     feature["properties"]["directionType"] = direction_types.get(route_id, "north-south")
+    if route_id in invert_directions:
+        feature["properties"]["invertDirections"] = True
 
 # Parse trips to map trip_id to the route_id and direction_id.
 trips = parse_csv('../gtfs-data/trips.txt')
