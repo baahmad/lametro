@@ -241,6 +241,14 @@
     color: #999;
 }
 
+.upcoming-note {
+    font-size: 11px;
+    color: #999;
+    margin: 8px 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .trip-stops {
     list-style: none;
     padding: 0;

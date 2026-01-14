@@ -284,23 +284,28 @@ function TripPanel({
                                                     </span>
                                                 </p>
                                                 {selectedTrip === arrival.tripId && tripDetails.length > 0 && (
-                                                    <ul className="trip-stops">
-                                                        {tripDetails.map((stop, stopIdx) => {
-                                                            const station = railLines.stations.find(s => 
-                                                                s.stopIds?.some(id => stop.stopId.startsWith(id))
-                                                            );
-                                                            return (
-                                                                <li key={stopIdx}>
-                                                                    <span className="stop-time">
-                                                                        {new Date(stop.arrivalTime * 1000).toLocaleTimeString()}
-                                                                    </span>
-                                                                    <span className="stop-name">
-                                                                        {station?.name || stop.stopId}
-                                                                    </span>
-                                                                </li>
-                                                            );
-                                                        })}
-                                                    </ul>
+                                                    <div className="trip-stops-container">
+                                                        <p className="upcoming-note">Upcoming stops</p>
+                                                        <ul className="trip-stops">
+                                                            {tripDetails
+                                                                .filter(stop => stop.arrivalTime >= arrival.arrivalTime)
+                                                                .map((stop, stopIdx) => {
+                                                                    const station = railLines.stations.find(s =>
+                                                                        s.stopIds?.some(id => stop.stopId.startsWith(id))
+                                                                    );
+                                                                    return (
+                                                                        <li key={stopIdx}>
+                                                                            <span className="stop-time">
+                                                                                {new Date(stop.arrivalTime * 1000).toLocaleTimeString()}
+                                                                            </span>
+                                                                            <span className="stop-name">
+                                                                                {station?.name || stop.stopId}
+                                                                            </span>
+                                                                        </li>
+                                                                    );
+                                                                })}
+                                                        </ul>
+                                                    </div>
                                                 )}
                                             </div>
                                         ))

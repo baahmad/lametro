@@ -19431,7 +19431,7 @@
         "route_id": "804",
         "name": "Metro E Line",
         "color": "#FDB913",
-        "directionType": "north-south"
+        "directionType": "east-west"
       },
       "geometry": {
         "type": "LineString",
