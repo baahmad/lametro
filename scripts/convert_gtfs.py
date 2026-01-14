@@ -1,11 +1,28 @@
 '''
-This script pre-processes the rail shape and geometry provided by
-LA Metro in order to display the rail lines on the map frontend.
+This script pre-processes rail data provided by LA metro for
+the following:
+- Create the rail and shape geometry to display on the map frontend.
+- Compile a list of station names.
+- Compile a list of stop sequences for different lines/directions.
+- Determine which lines run at each stop.
 '''
 
 import csv
 from collections import defaultdict
 import json
+
+# Route configuration.
+DIRECTION_TYPES = {
+    "801": "north-south",  # A Line
+    "802": "east-west",    # B Line
+    "803": "east-west",    # C Line
+    "804": "east-west",    # E Line
+    "805": "east-west",    # D Line
+    "807": "north-south",  # K Line
+}
+
+# Lines where direction_id values are inverted in the GTFS data.
+INVERT_DIRECTIONS = {"803"}  # C Line
 
 def parse_csv(filepath):
     with open(filepath, 'r') as f:
@@ -71,7 +88,7 @@ geojson["features"].sort(key=lambda f: f["properties"]["name"])
 # Parse rail stations.
 stops = parse_csv('../gtfs-data/stops.txt')
 
-# First pass: collect all parent stations (location_type = 1)
+# First pass: collect all parent stations (location_type = 1).
 parent_stations = {}
 for stop in stops:
     if stop['location_type'] == '1':
@@ -80,7 +97,7 @@ for stop in stops:
             'name': stop['stop_name'],
             'lat': float(stop['stop_lat']),
             'lon': float(stop['stop_lon']),
-            'stopIds': []  # Will collect all child stop IDs
+            'stopIds': []  # Will collect all child stop IDs.
         }
 
 # Second pass: collect all child stop IDs for each parent station.
@@ -88,32 +105,18 @@ for stop in stops:
 for stop in stops:
     parent_id = stop.get('parent_station', '')
     if parent_id and parent_id in parent_stations:
-        # Only add platform stops (location_type = 0), not entrances
+        # Only add platform stops (location_type = 0), not entrances.
         if stop['location_type'] == '0':
             parent_stations[parent_id]['stopIds'].append(stop['stop_id'])
 
-# Convert to list
+# Convert to list.
 stations = list(parent_stations.values())
 
-# Direction type for each route (north-south or east-west).
-direction_types = {
-    "801": "north-south",  # A Line
-    "802": "east-west",    # B Line
-    "803": "east-west",    # C Line
-    "804": "east-west",    # E Line
-    "805": "east-west",    # D Line
-    "807": "north-south",  # K Line
-}
-
-# Some lines have inverted direction_id values in the GTFS data.
-invert_directions = {
-    "803": True,  # C Line: direction_id is reversed
-}
-
+# Add direction configuration to each route feature.
 for feature in geojson["features"]:
     route_id = feature["properties"]["route_id"]
-    feature["properties"]["directionType"] = direction_types.get(route_id, "north-south")
-    if route_id in invert_directions:
+    feature["properties"]["directionType"] = DIRECTION_TYPES.get(route_id, "north-south")
+    if route_id in INVERT_DIRECTIONS:
         feature["properties"]["invertDirections"] = True
 
 # Parse trips to map trip_id to the route_id and direction_id.
@@ -150,7 +153,7 @@ for trip_id, stops_list in trip_stops.items():
 # Build stop sequences for each route/trip.
 stop_name_lookup = {s['stop_id']: s['name'] for s in stations}
 
-# Build a map of child stop_id -> parent station
+# Build a map of child stop_id -> parent station.
 stop_to_parent = {}
 for stop in stops:
     if stop['parent_station']:
@@ -163,7 +166,7 @@ stop_sequences = {}
 for (route_id, direction_id), trip_id in route_direction_trips.items():
     stops_list = sorted(trip_stops[trip_id], key=lambda s: s['sequence'])
     
-    # Map stop_id to parent station using the lookup
+    # Map stop_id to parent station using the lookup.
     stop_sequence = []
     for stop in stops_list:
         parent_id = stop_to_parent.get(stop['stop_id'], stop['stop_id'] + 'S')

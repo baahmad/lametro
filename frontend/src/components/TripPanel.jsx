@@ -1,9 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import './TripPanel.css';
 import railLines from '../data/railLines.json';
 import { API_BASE_URL } from '../config';
+import usePanelSwipe from '../hooks/usePanelSwipe';
+import DirectionSelector from './DirectionSelector';
 
-
+/**
+ * Slide-out panel for selecting stations, lines, directions, and viewing arrivals.
+ * @param {object} selectedStation - The currently selected station object.
+ * @param {function} onStationSelect - Callback when a station is selected.
+ * @param {string} selectedLine - The currently selected rail line route ID.
+ * @param {function} onLineChange - Callback when line selection changes.
+ * @param {string} selectedDirection - The currently selected direction ID.
+ * @param {function} onDirectionChange - Callback when direction selection changes.
+ * @param {boolean} isOpen - Whether the panel is open.
+ * @param {function} setIsOpen - Function to set the panel open state.
+ */
 function TripPanel({ 
     selectedStation, 
     onStationSelect, 
@@ -24,72 +36,17 @@ function TripPanel({
         station.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Swipe handling for mobile
-    const touchStartX = useRef(null);
-    const [dragOffset, setDragOffset] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
+    // Swipe handling for mobile.
     const panelWidth = typeof window !== 'undefined' && window.innerWidth <= 768
         ? window.innerWidth
         : 320;
-
-    const handleTouchStart = (e) => {
-        touchStartX.current = e.touches[0].clientX;
-        setIsDragging(true);
-    };
-
-    const handleTouchMove = (e) => {
-        if (touchStartX.current === null) return;
-
-        const currentX = e.touches[0].clientX;
-        const delta = currentX - touchStartX.current;
-
-        if (isOpen) {
-            // When open, only allow dragging left (negative delta) to close
-            const newOffset = Math.min(0, delta);
-            setDragOffset(newOffset);
-        } else {
-            // When closed, only allow dragging right (positive delta) to open
-            // Clamp to panel width
-            const newOffset = Math.max(0, Math.min(delta, panelWidth));
-            setDragOffset(newOffset);
-        }
-    };
-
-    const handleTouchEnd = () => {
-        if (touchStartX.current === null) return;
-
-        const threshold = panelWidth * 0.3; // 30% of panel width to trigger
-
-        if (isOpen) {
-            // If dragged left more than threshold, close
-            if (dragOffset < -threshold) {
-                setIsOpen(false);
-            }
-        } else {
-            // If dragged right more than threshold, open
-            if (dragOffset > threshold) {
-                setIsOpen(true);
-            }
-        }
-
-        // Reset
-        touchStartX.current = null;
-        setDragOffset(0);
-        setIsDragging(false);
-    };
-
-    // Calculate panel transform based on drag state (mobile only)
-    const getPanelStyle = () => {
-        if (!isDragging || typeof window === 'undefined' || window.innerWidth > 768) return {};
-
-        if (isOpen) {
-            // Panel is open (at translateX(0)), dragging left to close
-            return { transform: `translateX(${dragOffset}px)` };
-        } else {
-            // Panel is closed (at translateX(-100%)), dragging right to open
-            return { transform: `translateX(calc(-100% + ${dragOffset}px))` };
-        }
-    };
+    const {
+        isDragging,
+        handleTouchStart,
+        handleTouchMove,
+        handleTouchEnd,
+        getPanelStyle,
+    } = usePanelSwipe(isOpen, setIsOpen, panelWidth);
 
     useEffect(() => {
         if (selectedStation) {
@@ -103,7 +60,7 @@ function TripPanel({
     useEffect(() => {
         if (selectedLine && selectedDirection && selectedStation) {
             setLoading(true);
-            // Build stopIds parameter from station's stopIds array
+            // Build stopIds parameter from station's stopIds array.
             const stopIdsParam = selectedStation.stopIds?.join(',') || selectedStation.stop_id;
             fetch(`${API_BASE_URL}/api/trip-updates?routeId=${selectedLine}&directionId=${selectedDirection}&stopIds=${stopIdsParam}`)
                 .then(res => res.json())
@@ -226,43 +183,14 @@ function TripPanel({
                             </div>
 
                             {/* Direction Selection */}
-                            {selectedLine && (() => {
-                                const route = railLines.features.find(f => f.properties.route_id === selectedLine);
-                                const directionType = route?.properties.directionType || 'north-south';
-                                const invert = route?.properties.invertDirections;
-
-                                // Sort directions so Northbound/Eastbound (effectiveDirection=0) comes first
-                                const sortedLines = availableLines
-                                    .filter(l => l.route_id === selectedLine)
-                                    .sort((a, b) => {
-                                        const effA = invert ? (1 - a.direction_id) : a.direction_id;
-                                        const effB = invert ? (1 - b.direction_id) : b.direction_id;
-                                        return effA - effB;
-                                    });
-
-                                return (
-                                    <div className="direction-selector">
-                                        <label>Direction</label>
-                                        <div className="direction-toggle">
-                                            {sortedLines.map(line => {
-                                                const effectiveDirection = invert ? (1 - line.direction_id) : line.direction_id;
-                                                const directionLabel = directionType === 'north-south'
-                                                    ? (effectiveDirection === 1 ? 'Southbound' : 'Northbound')
-                                                    : (effectiveDirection === 1 ? 'Westbound' : 'Eastbound');
-                                                return (
-                                                    <button
-                                                        key={line.direction_id}
-                                                        className={`direction-btn ${selectedDirection === String(line.direction_id) ? 'selected' : ''}`}
-                                                        onClick={() => onDirectionChange(String(line.direction_id))}
-                                                    >
-                                                        {directionLabel}
-                                                    </button>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                );
-                            })()}
+                            {selectedLine && (
+                                <DirectionSelector
+                                    selectedLine={selectedLine}
+                                    availableLines={availableLines}
+                                    selectedDirection={selectedDirection}
+                                    onDirectionChange={onDirectionChange}
+                                />
+                            )}
 
                             {selectedLine && selectedDirection && (
                                 <div className="arrivals">

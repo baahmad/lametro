@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 
 import { API_BASE_URL } from '../config';
+
 const API_URL = `${API_BASE_URL}/api/vehicles`;
 
+/**
+ * Custom hook for fetching and polling vehicle positions from the API.
+ * @param {number} pollInterval - Polling interval in milliseconds (default: 15000).
+ * @returns {object} Object containing vehicles array and error state.
+ */
 function useVehiclePositions(pollInterval = 15000) {
   const [vehicles, setVehicles] = useState([]);
   const [error, setError] = useState(null);
@@ -21,13 +27,13 @@ function useVehiclePositions(pollInterval = 15000) {
       }
     };
 
-    // Fetch immediately
+    // Fetch immediately.
     fetchVehicles();
 
-    // Then fetch every pollInterval ms
+    // Then fetch every pollInterval ms.
     const interval = setInterval(fetchVehicles, pollInterval);
 
-    // Cleanup on unmount
+    // Cleanup on unmount.
     return () => clearInterval(interval);
   }, [pollInterval]);
 

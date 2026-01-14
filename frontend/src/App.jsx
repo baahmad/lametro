@@ -6,6 +6,10 @@ import useVehiclePositions from './hooks/useVehiclePositions';
 import railLines from './data/railLines.json';
 import './App.css';
 
+/**
+ * Root application component for the LA Metro Tracker.
+ * Manages global state for station/line/direction selection and URL synchronization.
+ */
 function App() {
   const { vehicles, error } = useVehiclePositions(15000);
   const [selectedStation, setSelectedStation] = useState(null);

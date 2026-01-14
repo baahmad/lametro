@@ -1,5 +1,10 @@
 import './AboutModal.css';
 
+/**
+ * Modal component displaying information about the LA Metro Tracker app.
+ * @param {boolean} isOpen - Whether the modal is visible.
+ * @param {function} onClose - Callback to close the modal.
+ */
 function AboutModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
@@ -7,7 +12,7 @@ function AboutModal({ isOpen, onClose }) {
         <div className="about-overlay" onClick={onClose}>
             <div className="about-modal" onClick={(e) => e.stopPropagation()}>
                 <button className="about-close" onClick={onClose}>✕</button>
-                <h2>LA Metro Train Arrivals</h2>
+                <h2>LA Metro Train Tracker</h2>
                 <p>Real-time train tracking for LA Metro rail lines.</p>
 
                 <div className="about-section">

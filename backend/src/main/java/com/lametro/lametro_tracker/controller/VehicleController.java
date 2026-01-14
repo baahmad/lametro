@@ -15,8 +15,9 @@ import com.lametro.lametro_tracker.service.GtfsRtService;
 @RestController
 public class VehicleController {
 
-    private GtfsRtService gtfsRtService;
-    public VehicleController(GtfsRtService gtfsRtService){
+    private final GtfsRtService gtfsRtService;
+
+    public VehicleController(GtfsRtService gtfsRtService) {
         this.gtfsRtService = gtfsRtService;
     }
     
