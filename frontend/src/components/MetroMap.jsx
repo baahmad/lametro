@@ -66,32 +66,47 @@ function MetroMap({ vehicles, onStationClick, isPanelOpen }) {
 
             {/* Rail Stations. */}
             {railLines.stations.map((station) => (
-                <CircleMarker
-                    key={`${station.stop_id}-${zoom >= 13}`}
-                    center={[station.lat, station.lon]}
-                    radius={4}
-                    fillColor="white"
-                    fillOpacity={1}
-                    color="black"
-                    weight={2}
-                    eventHandlers={{
-                        click: () => onStationClick(station)
-                    }}
-                >
-                    {zoom >= 13 ? (
-                        <Tooltip direction="top" offset={[0, -5]} opacity={0.9} permanent className="station-tooltip">
-                            {station.name.split(/\s[-\/]\s/).map((part, i) => (
-                                <span key={i}>{i > 0 && <br />}{part}</span>
-                            ))}
-                        </Tooltip>
-                    ) : (
-                        <Tooltip direction="top" offset={[0, -5]} opacity={0.9} className="station-tooltip">
-                            {station.name.split(/\s[-\/]\s/).map((part, i) => (
-                                <span key={i}>{i > 0 && <br />}{part}</span>
-                            ))}
-                        </Tooltip>
-                    )}
-                </CircleMarker>
+                <>
+                    {/* Invisible larger hit area for easier mobile tapping. */}
+                    <CircleMarker
+                        key={`${station.stop_id}-hitarea`}
+                        center={[station.lat, station.lon]}
+                        radius={15}
+                        fillColor="transparent"
+                        fillOpacity={0}
+                        stroke={false}
+                        eventHandlers={{
+                            click: () => onStationClick(station)
+                        }}
+                    />
+                    {/* Visible station marker. */}
+                    <CircleMarker
+                        key={`${station.stop_id}-${zoom >= 13}`}
+                        center={[station.lat, station.lon]}
+                        radius={4}
+                        fillColor="white"
+                        fillOpacity={1}
+                        color="black"
+                        weight={2}
+                        eventHandlers={{
+                            click: () => onStationClick(station)
+                        }}
+                    >
+                        {zoom >= 13 ? (
+                            <Tooltip direction="top" offset={[0, -5]} opacity={0.9} permanent className="station-tooltip">
+                                {station.name.split(/\s[-\/]\s/).map((part, i) => (
+                                    <span key={i}>{i > 0 && <br />}{part}</span>
+                                ))}
+                            </Tooltip>
+                        ) : (
+                            <Tooltip direction="top" offset={[0, -5]} opacity={0.9} className="station-tooltip">
+                                {station.name.split(/\s[-\/]\s/).map((part, i) => (
+                                    <span key={i}>{i > 0 && <br />}{part}</span>
+                                ))}
+                            </Tooltip>
+                        )}
+                    </CircleMarker>
+                </>
             ))}
       
             {/* Vehicle Markers. */}
