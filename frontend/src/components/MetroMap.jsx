@@ -93,13 +93,32 @@ function MetroMap({ vehicles, onStationClick, isPanelOpen }) {
                         }}
                     >
                         {zoom >= 13 ? (
-                            <Tooltip direction="top" offset={[0, -5]} opacity={0.9} permanent className="station-tooltip">
+                            <Tooltip
+                                direction="top"
+                                offset={[0, -5]}
+                                opacity={0.9}
+                                permanent
+                                interactive
+                                className="station-tooltip"
+                                eventHandlers={{
+                                    click: () => onStationClick(station)
+                                }}
+                            >
                                 {station.name.split(/\s[-\/]\s/).map((part, i) => (
                                     <span key={i}>{i > 0 && <br />}{part}</span>
                                 ))}
                             </Tooltip>
                         ) : (
-                            <Tooltip direction="top" offset={[0, -5]} opacity={0.9} className="station-tooltip">
+                            <Tooltip
+                                direction="top"
+                                offset={[0, -5]}
+                                opacity={0.9}
+                                interactive
+                                className="station-tooltip"
+                                eventHandlers={{
+                                    click: () => onStationClick(station)
+                                }}
+                            >
                                 {station.name.split(/\s[-\/]\s/).map((part, i) => (
                                     <span key={i}>{i > 0 && <br />}{part}</span>
                                 ))}
