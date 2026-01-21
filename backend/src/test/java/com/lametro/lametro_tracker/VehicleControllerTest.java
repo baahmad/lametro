@@ -85,20 +85,24 @@ public class VehicleControllerTest {
     }
 
     @Test
-    void getTripUpdates_sortsByArrivalTimeAndLimitsToTwo() throws Exception {
+    void getTripUpdates_sortsByArrivalTimeAndLimitsToFour() throws Exception {
         List<StopTimeUpdate> updates = List.of(
-            new StopTimeUpdate("trip1", "801", 0, "stop1", 3000L),
+            new StopTimeUpdate("trip1", "801", 0, "stop1", 5000L),
             new StopTimeUpdate("trip2", "801", 0, "stop2", 1000L),
-            new StopTimeUpdate("trip3", "801", 0, "stop3", 2000L)
+            new StopTimeUpdate("trip3", "801", 0, "stop3", 3000L),
+            new StopTimeUpdate("trip4", "801", 0, "stop4", 2000L),
+            new StopTimeUpdate("trip5", "801", 0, "stop5", 4000L)
         );
         when(gtfsRtService.getTripUpdates()).thenReturn(updates);
 
         // Assert and act.
         mockMvc.perform(get("/api/trip-updates"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.length()").value(2))
+            .andExpect(jsonPath("$.length()").value(4))
             .andExpect(jsonPath("$[0].arrivalTime").value(1000L))
-            .andExpect(jsonPath("$[1].arrivalTime").value(2000L));
+            .andExpect(jsonPath("$[1].arrivalTime").value(2000L))
+            .andExpect(jsonPath("$[2].arrivalTime").value(3000L))
+            .andExpect(jsonPath("$[3].arrivalTime").value(4000L));
     }
 
     @Test
