@@ -49,7 +49,7 @@ public class VehicleController {
             .filter(u -> directionId == null || u.getDirectionId() == directionId)
             .filter(u -> prefixes == null || prefixes.stream().anyMatch(p -> u.getStopId().startsWith(p)))
             .sorted((a, b) -> Long.compare(a.getArrivalTime(), b.getArrivalTime()))
-            .limit(2)
+            .limit(4)
             .toList();
     }
 
