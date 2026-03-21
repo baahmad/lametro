@@ -14,6 +14,7 @@ env:
   ECS_CLUSTER: lametro-cluster
   ECS_SERVICE: lametro-service
   S3_BUCKET: lametro-frontend-baahmad
+  CLOUDFRONT_DISTRIBUTION_ID: E3UB8RLLXLBC5X
 
 jobs:
   deploy-backend:
@@ -65,3 +66,7 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync frontend/dist/ s3://${{ env.S3_BUCKET }} --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
