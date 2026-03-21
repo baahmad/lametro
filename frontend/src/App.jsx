@@ -17,6 +17,15 @@ function App() {
   const [selectedDirection, setSelectedDirection] = useState('');
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [banner, setBanner] = useState(null);
+
+  // Fetch banner config.
+  useEffect(() => {
+    fetch('/config.json')
+      .then(res => res.json())
+      .then(data => setBanner(data.banner))
+      .catch(() => {});
+  }, []);
 
   // Read URL params on mount.
   useEffect(() => {
@@ -57,6 +66,11 @@ function App() {
   return (
     <div className="App">
       {error && <div className="error">Error: {error}</div>}
+      {banner?.enabled && (
+        <div className="outage-banner">
+          {banner.message}
+        </div>
+      )}
       <TripPanel 
         selectedStation={selectedStation} 
         onStationSelect={setSelectedStation}

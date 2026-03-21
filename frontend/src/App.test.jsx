@@ -138,3 +138,47 @@ describe('App URL parameter handling', () => {
         expect(getByTestId('direction').textContent).toBe('')
     })
 })
+
+describe('Outage banner', () => {
+    beforeEach(() => {
+        vi.restoreAllMocks()
+    })
+
+    it('Shows banner when config has banner enabled', async () => {
+        vi.spyOn(global, 'fetch').mockResolvedValue({
+            json: () => Promise.resolve({
+                banner: { enabled: true, message: 'System outage in progress.' }
+            })
+        })
+
+        const { getByText } = render(<App />)
+
+        await waitFor(() => {
+            expect(getByText('System outage in progress.')).toBeTruthy()
+        })
+    })
+
+    it('Hides banner when config has banner disabled', async () => {
+        vi.spyOn(global, 'fetch').mockResolvedValue({
+            json: () => Promise.resolve({
+                banner: { enabled: false, message: 'System outage in progress.' }
+            })
+        })
+
+        const { queryByText } = render(<App />)
+
+        await waitFor(() => {
+            expect(queryByText('System outage in progress.')).toBeNull()
+        })
+    })
+
+    it('Hides banner when config fetch fails', async () => {
+        vi.spyOn(global, 'fetch').mockRejectedValue(new Error('Network error'))
+
+        const { container } = render(<App />)
+
+        await waitFor(() => {
+            expect(container.querySelector('.outage-banner')).toBeNull()
+        })
+    })
+})
