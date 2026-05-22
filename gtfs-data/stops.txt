@@ -71,7 +71,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,stop_url,location_type,p
 80122C,80122C,7th Street / Metro Center Station - 7th & Flower Elevator,,34.0489,-118.25839,,2,80122S,
 80122D,80122D,7th Street / Metro Center Station - 7th & Flower Entrance,,34.0487,-118.25856,,2,80122S,
 80122F,80122F,7th Street / Metro Center Station - Elevator at the Bloc,,34.048113,-118.258228,,2,80122S,
-80122G,80122G,7th Street / Metro Center Station - Entrance to the Bloc,,34.048127,-118.258310,,2,80122S,
+80122G,80122G,7th Street / Metro Center Station - Entrance to the Bloc,,34.048127,-118.25831,,2,80122S,
 80123,80123,LATTC / Ortho Institute Station,,34.029112,-118.273603,,0,80123S,LATTC
 80123S,80123S,LATTC / Ortho Institute Station,,34.029112,-118.273603,,1,,
 80123A,80123A,LATTC / Ortho Institute Station - North Entrance,,34.03011,-118.27303,,2,80123S,
@@ -166,76 +166,91 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,stop_url,location_type,p
 80154S,80154S,5th Street Station,,33.773598,-118.189412,,1,,
 80154A,80154A,5th Street Station - Long Beach & 5th Entrance,,33.77305,-118.18935,,2,80154S,
 80154B,80154B,5th Street Station - Long Beach & 6th Entrance,,33.77401,-118.18936,,2,80154S,
-801100,801100,Glendora Station,,34.131900,-117.866300,,0,801100S,Glendora
-801100S,801100S,Glendora Station,,34.131900,-117.866300,,1,,
-801101,801101,San Dimas Station,,34.105200,-117.805800,,0,801101S,San Dimas
-801101S,801101S,San Dimas Station,,34.105200,-117.805800,,1,,
-801102,801102,La Verne / Fairplex Station,,34.097200,-117.768100,,0,801102S,La Verne
-801102S,801102S,La Verne / Fairplex Station,,34.097200,-117.768100,,1,,
-801103,801103,Pomona North Station,,34.094000,-117.752200,,0,801103S,Pomona
-801103S,801103S,Pomona North Station,,34.094000,-117.752200,,1,,
-80201,80201,North Hollywood Station,,34.168504,-118.376808,,0,80201S,NoHo
+801100,801100,Glendora Station,,34.1319,-117.8663,,0,801100S,Glendora
+801100S,801100S,Glendora Station,,34.1319,-117.8663,,1,,
+801101,801101,San Dimas Station,,34.1052,-117.8058,,0,801101S,San Dimas
+801101S,801101S,San Dimas Station,,34.1052,-117.8058,,1,,
+801102,801102,La Verne / Fairplex Station,,34.0972,-117.7681,,0,801102S,La Verne
+801102S,801102S,La Verne / Fairplex Station,,34.0972,-117.7681,,1,,
+801103,801103,Pomona North Station,,34.094,-117.7522,,0,801103S,Pomona
+801103S,801103S,Pomona North Station,,34.094,-117.7522,,1,,
+80201,80201,North Hollywood Station,,34.168504,-118.376808,,0,80201S,North Hollywood
 80201S,80201S,North Hollywood Station,,34.168504,-118.376808,,1,,
 80201A,80201A,North Hollywood Station - Elevator,,34.16906,-118.3768,,2,80201S,
 80201B,80201B,North Hollywood Station - Main Entrance,,34.16879,-118.37651,,2,80201S,
-80202,80202,Universal / Studio City Station,,34.140002,-118.362699,,0,80202S,Univ City
+80202,80202,Universal / Studio City Station,,34.140002,-118.362699,,0,80202S,Universal City
 80202S,80202S,Universal / Studio City Station,,34.140002,-118.362699,,1,,
 80202A,80202A,Universal / Studio City Station - North Elevator,,34.13942,-118.36259,,2,80202S,
 80202C,80202C,Universal / Studio City Station - South Elevator,,34.13896,-118.36259,,2,80202S,
 80202D,80202D,Universal / Studio City Station - South Entrance,,34.1388,-118.36265,,2,80202S,
-80203,80203,Hollywood / Highland Station,,34.101547,-118.338549,,0,80203S,Highlnd
+80203,80203,Hollywood / Highland Station,,34.101547,-118.338549,,0,80203S,Hollywood/Highland
 80203S,80203S,Hollywood / Highland Station,,34.101547,-118.338549,,1,,
 80203A,80203A,Hollywood / Highland Station - Hollywood & Highland Entrance,,34.1017,-118.33927,,2,80203S,
-80204,80204,Hollywood / Vine Station,,34.10163,-118.32518,,0,80204S,HW/Vine
+80204,80204,Hollywood / Vine Station,,34.10163,-118.32518,,0,80204S,Hollywood/Vine
 80204S,80204S,Hollywood / Vine Station,,34.10163,-118.32518,,1,,
 80204A,80204A,Hollywood / Vine Station - Elevator,,34.10132,-118.32557,,2,80204S,
 80204B,80204B,Hollywood / Vine Station - Main Entrance,,34.10132,-118.32573,,2,80204S,
-80205,80205,Hollywood / Western Station,,34.101737,-118.308117,,0,80205S,HW/Wstrn
+80205,80205,Hollywood / Western Station,,34.101737,-118.308117,,0,80205S,Hollywood/Western
 80205S,80205S,Hollywood / Western Station,,34.101737,-118.308117,,1,,
 80205A,80205A,Hollywood / Western Station - Elevator,,34.10158,-118.30858,,2,80205S,
 80205B,80205B,Hollywood / Western Station - Main Entrance,,34.10153,-118.30899,,2,80205S,
-80206,80206,Vermont / Sunset Station,,34.097708,-118.291756,,0,80206S,Sunset
+80206,80206,Vermont / Sunset Station,,34.097708,-118.291756,,0,80206S,Vermont/Sunset
 80206S,80206S,Vermont / Sunset Station,,34.097708,-118.291756,,1,,
 80206A,80206A,Vermont / Sunset Station - NE Main Entrance,,34.09847,-118.29148,,2,80206S,
 80206B,80206B,Vermont / Sunset Station - NW Main Entrance,,34.09827,-118.29205,,2,80206S,
-80207,80207,Vermont / Santa Monica Station,,34.08991,-118.29173,,0,80207S,Ver/SaMo
+80207,80207,Vermont / Santa Monica Station,,34.08991,-118.29173,,0,80207S,Vermont/Santa Monica
 80207S,80207S,Vermont / Santa Monica Station,,34.08991,-118.29173,,1,,
 80207A,80207A,Vermont / Santa Monica Station - Santa Monica Elevator,,34.09032,-118.29191,,2,80207S,
 80207B,80207B,Vermont / Santa Monica Station - Santa Monica Entrance,,34.0906,-118.29203,,2,80207S,
 80207C,80207C,Vermont / Santa Monica Station - Willow Brook Elevator,,34.08936,-118.29198,,2,80207S,
-80208,80208,Vermont / Beverly Station,,34.076526,-118.291686,,0,80208S,Beverly
+80208,80208,Vermont / Beverly Station,,34.076526,-118.291686,,0,80208S,Vermont/Beverly
 80208S,80208S,Vermont / Beverly Station,,34.076526,-118.291686,,1,,
 80208A,80208A,Vermont / Beverly Station - Beverly Entrance,,34.0766,-118.29191,,2,80208S,
-80209,80209,Wilshire / Vermont Station,,34.062701,-118.290082,,0,80209S,Wil/Ver
+80209,80209,Wilshire / Vermont Station,,34.062701,-118.290082,,0,80209S,Wilshire/Vermont
 80209S,80209S,Wilshire / Vermont Station,,34.062701,-118.290082,,1,,
 80209A,80209A,Wilshire / Vermont Station - Shatto Entrance,,34.0625,-118.29028,,2,80209S,
 80209B,80209B,Wilshire / Vermont Station - Vermont Entrance,,34.06245,-118.29092,,2,80209S,
-80210,80210,Westlake / MacArthur Park Station,,34.056368,-118.274879,,0,80210S,Westlake
+80210,80210,Westlake / MacArthur Park Station,,34.056368,-118.274879,,0,80210S,Westlake/MacArthur Park
 80210S,80210S,Westlake / MacArthur Park Station,,34.056368,-118.274879,,1,,
 80210A,80210A,Westlake / MacArthur Park Station - Elevator,,34.0569,-118.275975,,2,80210S,
 80210C,80210C,Westlake / MacArthur Park Station - South Entrance,,34.056943,-118.276208,,2,80210S,
-80211,80211,7th Street / Metro Center Station - Metro B & D Lines,,34.048634,-118.258682,,0,80122S,7MC
-80212,80212,Pershing Square Station,,34.049316,-118.251259,,0,80212S,Persh Sq
+80211,80211,7th Street / Metro Center Station - Metro B & D Lines,,34.048634,-118.258682,,0,80122S,7th St/Metro Center
+80212,80212,Pershing Square Station,,34.049316,-118.251259,,0,80212S,Pershing Square
 80212S,80212S,Pershing Square Station,,34.049316,-118.251259,,1,,
 80212A,80212A,Pershing Square Station - Hill & 4th NE Entrance,,34.0501,-118.24989,,2,80212S,
 80212C,80212C,Pershing Square Station - Hill & 5th Elevator,,34.04844,-118.25171,,2,80212S,
 80212D,80212D,Pershing Square Station - Hill & 5th Entrance,,34.04836,-118.25148,,2,80212S,
-80213,80213,Civic Center / Grand Park Station,,34.0549,-118.246057,,0,80213S,Civic Ctr
+80213,80213,Civic Center / Grand Park Station,,34.0549,-118.246057,,0,80213S,Civic Ctr/Grand Pk
 80213S,80213S,Civic Center / Grand Park Station,,34.0549,-118.246057,,1,,
 80213B,80213B,Civic Center / Grand Park Station - Hill & Temple Elevator,,34.05522,-118.24545,,2,80213S,
 80213C,80213C,Civic Center / Grand Park Station - Hill & Temple Main Entrance,,34.05554,-118.24516,,2,80213S,
-80214,80214,Union Station - Metro B & D Lines,,34.056197,-118.234249,,0,80214S,UnionSta
+80214,80214,Union Station - Metro B & D Lines,,34.056197,-118.234249,,0,80214S,Union Station
 80214S,80214S,Union Station,,34.056197,-118.234249,,1,,
 80214B,80214B,Union Station - Vignes Elevator,,34.05532,-118.23351,,2,80214S,
 80214C,80214C,Union Station - Vignes Entrance,,34.0554,-118.23346,,2,80214S,
-80215,80215,Wilshire / Normandie Station,,34.061753,-118.301458,,0,80215S,Wil/Norm
+80215,80215,Wilshire / Normandie Station,,34.061753,-118.301458,,0,80215S,Wilshire/Normandie
 80215S,80215S,Wilshire / Normandie Station,,34.061753,-118.301458,,1,,
 80215A,80215A,Wilshire / Normandie Station - Elevator,,34.06157,-118.30098,,2,80215S,
 80215B,80215B,Wilshire / Normandie Station - Main Entrance,,34.0614,-118.30091,,2,80215S,
-80216,80216,Wilshire / Western Station,,34.061689,-118.308756,,0,80216S,Wil/Wstrn
+80216,80216,Wilshire / Western Station,,34.061689,-118.308756,,0,80216S,Wilshire/Western
 80216S,80216S,Wilshire / Western Station,,34.061689,-118.308756,,1,,
 80216A,80216A,Wilshire / Western Station - Elevator,,34.06191,-118.30876,,2,80216S,
 80216B,80216B,Wilshire / Western Station - Main Entrance,,34.06216,-118.30883,,2,80216S,
+80229,80229,Wilshire / La Brea Station,,34.06221475,-118.3434467,,0,80229S,Wilshire/La Brea
+80229S,80229S,Wilshire / La Brea Station,,34.06221475,-118.3434467,,1,,
+80229A,80229A,Wilshire / La Brea Station - Main Entrance,,34.0624,-118.34437,,2,80229S,
+80229B,80229B,Wilshire / La Brea Station - Main Elevators,,34.06241,-118.34443,,2,80229S,
+80229C,80229C,Wilshire / La Brea Station - Main Escalators,,34.06252,-118.34434,,2,80229S,
+80230,80230,Wilshire / Fairfax Station,,34.06296708,-118.3611657,,0,80230S,Wilshire/Fairfax
+80230S,80230S,Wilshire / Fairfax Station,,34.06296708,-118.3611657,,1,,
+80230A,80230A,Wilshire / Fairfax Station - Main Entrance,,34.06272,-118.36043,,2,80230S,
+80230B,80230B,Wilshire / Fairfax Station - Main Elevators,,34.06252,-118.36028,,2,80230S,
+80230C,80230C,Wilshire / Fairfax Station - Main Escalators,,34.0626,-118.36044,,2,80230S,
+80231,80231,Wilshire / La Cienega Station,,34.06483444,-118.3747009,,0,80231S,Wilshire/La Cienega
+80231S,80231S,Wilshire / La Cienega Station,,34.06483444,-118.3747009,,1,,
+80231A,80231A,Wilshire / La Cienega Station - Main Entrance,,34.06536,-118.376,,2,80231S,
+80231B,80231B,Wilshire / La Cienega Station - Main Elevators,,34.06527,-118.37577,,2,80231S,
+80231C,80231C,Wilshire / La Cienega Station - Main Escalators,,34.06537,-118.37591,,2,80231S,
 80301,80301,Redondo Beach Station,,33.89464,-118.369196,,0,80301S,Redondo
 80301S,80301S,Redondo Beach Station,,33.89464,-118.369196,,1,,
 80301A,80301A,Redondo Beach Station - North Elevator,,33.8948,-118.369417,,2,80301S,
@@ -255,7 +270,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,stop_url,location_type,p
 80304S,80304S,Mariposa Station,,33.9232,-118.387572,,1,,
 80304A,80304A,Mariposa Station - Nash & Mariposa Entrance,,33.923367,-118.387532,,2,80304S,
 80304B,80304B,Mariposa Station - South Entrance,,33.923083,-118.387539,,2,80304S,
-80305,80305,Aviation / Imperial Station,,33.929621,-118.377134,,0,80305S,Aviation
+80305,80305,Aviation / Imperial Station,,33.929621,-118.377134,,0,80305S,Avtn/Imp
 80305S,80305S,Aviation / Imperial Station,,33.929621,-118.377134,,1,,
 80305A,80305A,Aviation / Imperial Station - Central Elevator,,33.929683,-118.377133,,2,80305S,
 80305B,80305B,Aviation / Imperial Station - East Entrance,,33.929617,-118.37655,,2,80305S,
@@ -396,23 +411,23 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,stop_url,location_type,p
 80427,80427,APU / Citrus College Station,,34.136814,-117.891636,,0,80427S,Azusa
 80427S,80427S,APU / Citrus College Station,,34.136814,-117.891636,,1,,
 80427A,80427A,APU / Citrus College Station - East Portal,,34.13694,-117.89085,,2,80427S,
-80701,80701,Aviation / Century Station,,33.94557205,-118.378683,,0,80701S,Avia/Cen
+80701,80701,Aviation / Century Station,,33.94557205,-118.378683,,0,80701S,Avtn/Cen
 80701S,80701S,Aviation / Century Station,,33.94557205,-118.378683,,1,,
-80701A,80701A,Aviation / Century Station - Dual Elevators,,33.94600439188952,-118.37871239248265,,2,80701S,
-80701B,80701B,Aviation / Century Station - Escalators,,33.945834428884865,-118.37889869842135,,2,80701S,
+80701A,80701A,Aviation / Century Station - Dual Elevators,,33.94600439,-118.3787124,,2,80701S,
+80701B,80701B,Aviation / Century Station - Escalators,,33.94583443,-118.3788987,,2,80701S,
 80702,80702,LAX / Metro Transit Center,,33.9500753,-118.37866,,0,80702S,AMC
 80702S,80702S,LAX / Metro Transit Center,,33.9500753,-118.37866,,1,,
-80702A,80702A,LAX / Metro Transit Center - Main Pedestrian Entrance,,33.950020,-118.378160,,2,80702S,
-80702B,80702B,LAX / Metro Transit Center - Main Elevators,,33.950020,-118.378130,,2,80702S,
-80702C,80702C,LAX / Metro Transit Center - Main Escalators,,33.950020,-118.378180,,2,80702S,
-80702D,80702D,LAX / Metro Transit Center - Main Stairs,,33.950040,-118.378160,,2,80702S,
-80702E,80702E,LAX / Metro Transit Center - Bus Plaza Entrance,,33.950620,-118.378160,,2,80702S,
-80702F,80702F,LAX / Metro Transit Center - Bus Plaza Elevators,,33.950620,-118.378130,,2,80702S,
-80702G,80702G,LAX / Metro Transit Center - Bus Plaza Escalators,,33.950620,-118.378180,,2,80702S,
-80702H,80702H,LAX / Metro Transit Center - Bus Plaza Stairs,,33.950640,-118.378160,,2,80702S,
-80702I,80702I,LAX / Metro Transit Center - South Pedestrian Entrance,,33.949420,-118.378210,,2,80702S,
-80702J,80702J,LAX / Metro Transit Center - South Pedestrian Elevators,,33.949440,-118.378210,,2,80702S,
-80702K,80702K,LAX / Metro Transit Center - Bike Hub,,33.94935,-118.378310,,2,80702S,
+80702A,80702A,LAX / Metro Transit Center - Main Pedestrian Entrance,,33.95002,-118.37816,,2,80702S,
+80702B,80702B,LAX / Metro Transit Center - Main Elevators,,33.95002,-118.37813,,2,80702S,
+80702C,80702C,LAX / Metro Transit Center - Main Escalators,,33.95002,-118.37818,,2,80702S,
+80702D,80702D,LAX / Metro Transit Center - Main Stairs,,33.95004,-118.37816,,2,80702S,
+80702E,80702E,LAX / Metro Transit Center - Bus Plaza Entrance,,33.95062,-118.37816,,2,80702S,
+80702F,80702F,LAX / Metro Transit Center - Bus Plaza Elevators,,33.95062,-118.37813,,2,80702S,
+80702G,80702G,LAX / Metro Transit Center - Bus Plaza Escalators,,33.95062,-118.37818,,2,80702S,
+80702H,80702H,LAX / Metro Transit Center - Bus Plaza Stairs,,33.95064,-118.37816,,2,80702S,
+80702I,80702I,LAX / Metro Transit Center - South Pedestrian Entrance,,33.94942,-118.37821,,2,80702S,
+80702J,80702J,LAX / Metro Transit Center - South Pedestrian Elevators,,33.94944,-118.37821,,2,80702S,
+80702K,80702K,LAX / Metro Transit Center - Bike Hub,,33.94935,-118.37831,,2,80702S,
 80703,80703,Westchester / Veterans Station,,33.96203144,-118.374378,,0,80703S,West/Vet
 80703S,80703S,Westchester / Veterans Station,,33.96203144,-118.374378,,1,,
 80703A,80703A,Westchester / Veterans Station - NB Ramp to Hindry,,33.96224,-118.37375,,2,80703S,
@@ -427,11 +442,11 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,stop_url,location_type,p
 80705B,80705B,Fairview Heights Station - West Portal Calgary Gates,,33.97502,-118.33679,,2,80705S,
 80706,80706,Hyde Park Station,,33.98818653,-118.3308158,,0,80706S,Hyde Park
 80706S,80706S,Hyde Park Station,,33.98818653,-118.3308158,,1,,
-80706A,80706A,Hyde Park Station - North Portal Ramp,,33.98890,-118.33083,,2,80706S,
+80706A,80706A,Hyde Park Station - North Portal Ramp,,33.9889,-118.33083,,2,80706S,
 80706B,80706B,Hyde Park Station - South Portal Ramp,,33.98729,-118.33085,,2,80706S,
 80707,80707,Leimert Park Station,,34.00390927,-118.3320162,,0,80707S,Leimert
 80707S,80707S,Leimert Park Station,,34.00390927,-118.3320162,,1,,
-80707A,80707A,Leimert Park Station - Dual Elevators,,34.0044537631794,-118.33265053811144,,2,80707S,
+80707A,80707A,Leimert Park Station - Dual Elevators,,34.00445376,-118.3326505,,2,80707S,
 80707B,80707B,Leimert Park Station - Escalator,,34.00457,-118.33274,,2,80707S,
 80708,80708,Martin Luther King Jr Station,,34.00956339,-118.3353594,,0,80708S,MLK
 80708S,80708S,Martin Luther King Jr Station,,34.00956339,-118.3353594,,1,,
