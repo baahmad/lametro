@@ -1,0 +1,100 @@
+name: Refresh LA Metro GTFS
+
+# Daily check of LA Metro's published rail GTFS feed. If the refresh adds new
+# parent stations (i.e. a new physical station opened), open a PR with the
+# regenerated gtfs-data/ and railLines.json. Pure schedule churn is discarded.
+#
+# Feed: https://gitlab.com/LACMTA/gtfs_rail (updated Tue-Sat mornings PT, no auth).
+
+on:
+  schedule:
+    # 20:05 UTC = 13:05 PDT / 12:05 PST — ~5 min after LA Metro's Tue-Sat
+    # morning publish window closes (noon Pacific), accounting for DST.
+    - cron: '5 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Capture station set before refresh
+        run: |
+          python3 - <<'EOF'
+          import json
+          with open('frontend/src/data/railLines.json') as f:
+              data = json.load(f)
+          ids = sorted(s['stop_id'] for s in data['stations'])
+          with open('/tmp/stations_before.json', 'w') as f:
+              json.dump(ids, f)
+          print(f'Before: {len(ids)} stations')
+          EOF
+
+      - name: Download latest LA Metro rail GTFS
+        run: |
+          curl -fSL https://gitlab.com/LACMTA/gtfs_rail/-/raw/master/gtfs_rail.zip -o /tmp/gtfs_rail.zip
+          rm -f gtfs-data/*.txt
+          unzip -o /tmp/gtfs_rail.zip -d gtfs-data/
+
+      - name: Regenerate frontend data
+        working-directory: scripts
+        run: python3 convert_gtfs.py
+
+      - name: Detect new stations
+        id: detect
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          with open('/tmp/stations_before.json') as f:
+              before = set(json.load(f))
+          with open('frontend/src/data/railLines.json') as f:
+              data = json.load(f)
+          after_map = {s['stop_id']: s['name'] for s in data['stations']}
+          new_ids = sorted(set(after_map) - before)
+          gone_ids = sorted(before - set(after_map))
+          new_names = [after_map[i] for i in new_ids]
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+              fh.write(f'has_new_stations={"true" if new_ids else "false"}\n')
+              fh.write(f'new_count={len(new_ids)}\n')
+              fh.write('new_names<<EONAMES\n')
+              for n in new_names:
+                  fh.write(f'- {n}\n')
+              fh.write('EONAMES\n')
+
+          print(f'New stations: {new_names or "none"}')
+          print(f'Removed station IDs: {gone_ids or "none"}')
+          EOF
+
+      - name: Open PR for new stations
+        if: steps.detect.outputs.has_new_stations == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEW_COUNT: ${{ steps.detect.outputs.new_count }}
+          NEW_NAMES: ${{ steps.detect.outputs.new_names }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="gtfs/refresh-${DATE}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add gtfs-data/ frontend/src/data/railLines.json
+          git commit -m "Refresh GTFS: ${NEW_COUNT} new station(s) detected"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "GTFS refresh: ${NEW_COUNT} new station(s)" \
+            --body "$(printf 'Automated refresh from LA Metro GTFS feed.\n\n**New stations:**\n%s\n\nSource: https://gitlab.com/LACMTA/gtfs_rail\n' "${NEW_NAMES}")" \
+            --base main \
+            --head "$BRANCH"
+
+      - name: Discard schedule-only changes
+        if: steps.detect.outputs.has_new_stations != 'true'
+        run: |
+          echo "No new stations detected — discarding GTFS file changes."
+          git checkout -- gtfs-data/ frontend/src/data/railLines.json
+          git clean -fd gtfs-data/
