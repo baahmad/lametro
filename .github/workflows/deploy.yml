@@ -52,6 +52,8 @@ jobs:
           node-version: '20'
 
       - name: Build frontend
+        env:
+          VITE_CARTO_API_KEY: ${{ secrets.VITE_CARTO_API_KEY }}
         run: |
           cd frontend
           npm ci

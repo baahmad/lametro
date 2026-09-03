@@ -39,6 +39,12 @@ Then run:
 source ~/.zshrc
 ```
 
+You also need a free CARTO basemap API key ([request one here](https://carto.com/basemaps/apikey/)). Copy `frontend/.env.example` to `frontend/.env.local` and set the key:
+```
+VITE_CARTO_API_KEY=YOUR_KEY
+```
+For deploys, the same value is stored as the `VITE_CARTO_API_KEY` GitHub Actions secret.
+
 ### How to Run
 You'll need to open two terminals. In one, navigate to `./backend` and run:
 ```

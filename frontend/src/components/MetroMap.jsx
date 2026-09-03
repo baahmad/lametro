@@ -2,6 +2,9 @@ import { MapContainer, TileLayer, CircleMarker, Polyline, Pane, ZoomControl, Too
 import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import railLines from '../data/railLines.json';
+import { CARTO_API_KEY } from '../config';
+
+const cartoKeyParam = CARTO_API_KEY ? `?key=${CARTO_API_KEY}` : '';
 
 /**
  * Interactive Leaflet map component displaying LA Metro rail lines, stations, and vehicles.
@@ -50,7 +53,7 @@ function MetroMap({ vehicles, onStationClick, isPanelOpen }) {
             
             {/* Map. */}
             <TileLayer
-                url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
+                url={`https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png${cartoKeyParam}`}
                 attribution='&copy; OpenStreetMap contributors &copy; CARTO'
             />
         
@@ -149,7 +152,7 @@ function MetroMap({ vehicles, onStationClick, isPanelOpen }) {
             {zoom < 13 && (
                 <Pane name="labels" style={{ zIndex: 650 }}>
                     <TileLayer
-                        url="https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png"
+                        url={`https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png${cartoKeyParam}`}
                     />
                 </Pane>
             )}
